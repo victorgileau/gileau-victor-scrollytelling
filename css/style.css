@@ -1,0 +1,147 @@
+:root {
+    --noir: black;
+    --blanc: white;
+    --alphaZero: rgba(0,0,0,0);
+    --alphaMoiter: rgba(0,0,0,0.5);
+}
+
+* {
+    box-sizing: content-box;
+    margin: 0;
+}
+
+/*
+body {
+    overflow: hidden;
+}
+*/
+
+@font-face {
+    font-family: 'Grunge';
+    src: url(../media/fonts/grunge_marker/Grunge\ Marker.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Handwriting-black-draft';
+    src: url(../media/fonts/handwriting_black_draft/handwriting-black-draft_DEMO.otf) format('opentype');
+}
+
+h1, .h1 {
+    font-family: 'Grunge';
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--noir);
+}
+
+h2, .h2 {
+    font-family: 'Grunge';
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--noir);
+}
+
+h3, .h3 {
+    font-family: 'Grunge';
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--noir);
+}
+
+h4, .h4 {
+    font-family: 'Grunge';
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--noir);
+}
+
+p {
+    font-family: 'Handwriting-black-draft';
+    font-size: 24px;
+    color: var(--noir);
+}
+
+/*
+Header
+*/
+
+.header {
+    background-image: url(../media/img/img_arriere_plan/scene-3-chapitre3.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: repeat-y;
+    width: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    font-size: 8vmin;
+    align-self: start;
+    color: var(--blanc);
+    padding-left: 4vmin;
+    text-shadow: 5px 5px var(--noir);
+}
+
+.header p {
+    width: 100%;
+    text-align: center;
+    color: var(--blanc);
+    background-color: var(--blanc);
+    background-image: url(../media/img/img_arriere_plan/chap1-2-background-noir-nuit.jpg), linear-gradient(to right, var(--noir), var(--blanc), var(--noir));
+    background-blend-mode: multiply;
+    color: var(--blanc);
+    font-family: 'Grunge';
+    font-size: 1.8vmin;
+    line-height: 6vmin;
+}
+
+header p em {
+    font-family: 'Grunge';
+    color: var(--noir);
+    text-shadow: 0 0 10px var(--blanc);
+}
+
+.header .down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25vh;
+}
+
+.header .fleche-down {
+    width: 10vw;
+    filter: drop-shadow(0 0 10px var(--blanc));
+}
+
+@media screen and (max-width: 650px) {
+    .header {
+        background-size: 200%;
+    }
+    .header .fleche-down {
+        width: 25vw;
+    }
+    header p {
+        font-size: 3vmin;
+    }
+}
+
+/*
+Footer
+*/
+
+footer {
+    width: 100%;
+    height: auto;
+    background-color: var(--blanc);
+    background-image: url(../media/img/img_arriere_plan/chap1-2-background-noir-nuit.jpg), linear-gradient(to right, var(--noir), var(--blanc), var(--noir));
+    background-blend-mode: multiply;
+    color: var(--blanc);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
