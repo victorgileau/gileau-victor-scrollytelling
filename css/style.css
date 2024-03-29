@@ -191,9 +191,13 @@ footer {
 SpriteSheet
 */
 
+.all {
+    height: 300vh;
+}
+
 .content {
     background-color: var(--alphaMoiter);
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -209,7 +213,7 @@ SpriteSheet
     height: 250px;
     background-size: cover;
     animation-name: spriteMoveJ;
-    animation-duration: 0.8s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: steps(4);
 }
@@ -226,11 +230,11 @@ SpriteSheet
 .sprite.frog {
     background-image: url(../media/img/img_personnages/toad-anim-pixel-papier.png);
     left: 50%;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     background-size: cover;
     animation-name: spriteMoveFrog;
-    animation-duration: 1.2s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: steps(6);
 }
@@ -249,7 +253,7 @@ SpriteSheet
         background-position: 0 0;
     }
     100% {
-        background-position: 0 -1500px;
+        background-position: 0 -1800px;
     }
 }
 
