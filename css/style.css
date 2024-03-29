@@ -10,11 +10,11 @@
     margin: 0;
 }
 
-/*
+
 body {
-    overflow: hidden;
+    overflow-x: hidden;
 }
-*/
+
 
 @font-face {
     font-family: 'Grunge';
@@ -69,7 +69,7 @@ Header
     background-size: 100%;
     background-position: center;
     background-repeat: repeat-y;
-    width: auto;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -88,10 +88,6 @@ Header
 .header p {
     width: 100%;
     text-align: center;
-    color: var(--blanc);
-    background-color: var(--blanc);
-    background-image: url(../media/img/img_arriere_plan/chap1-2-background-noir-nuit.jpg), linear-gradient(to right, var(--noir), var(--blanc), var(--noir));
-    background-blend-mode: multiply;
     color: var(--blanc);
     font-family: 'Grunge';
     font-size: 1.8vmin;
@@ -123,9 +119,55 @@ header p em {
     .header .fleche-down {
         width: 25vw;
     }
-    header p {
+    .header p {
         font-size: 3vmin;
     }
+}
+
+/*
+Sections
+*/
+
+#chapitre1 {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../media/img/img_elements_visuels/chap1-2/background.png);
+}
+
+#chapitre2 {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--alphaMoiter);
+    background-image: url(../media/img/img_elements_visuels/chap1-2/background.png);
+    background-blend-mode: multiply;
+}
+
+#chapitre3 {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../media/img/img_elements_visuels/chap3/background-tomber.jpg);
+    background-size: 80%;
+    background-repeat: repeat-x;
+}
+
+#chapitre4 {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../media/img/img_elements_visuels/chap4-5/background-cave-entrer.jpg);
+}
+
+#chapitre5 {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../media/img/img_arriere_plan/chap1-2-background-noir-nuit.jpg);
+}
+
+#chapitre6 {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--alphaMoiter);
+    background-image: url(../media/img/img_arriere_plan/chap1-2-background-noir-nuit.jpg);
+    background-blend-mode: darken;
 }
 
 /*
