@@ -94,7 +94,7 @@ Header
     line-height: 6vmin;
 }
 
-header p em {
+.header p em {
     font-family: 'Grunge';
     color: var(--noir);
     text-shadow: 0 0 10px var(--blanc);
@@ -185,5 +185,71 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+/*
+SpriteSheet
+*/
+
+.content {
+    background-color: var(--alphaMoiter);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sprite {
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    animation-name: spriteMoveJ;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(4);
+}
+
+.sprite.standJ {
+    background-image: url(../media/img/img_personnages/J-stand-back-v1-papier.png);
+}
+
+.sprite.walkJ {
+    background-image: url(../media/img/img_personnages/J-walk-v2-papier.png);
+    left: 25%;
+}
+
+.sprite.frog {
+    background-image: url(../media/img/img_personnages/toad-anim-pixel-papier.png);
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    animation-name: spriteMoveFrog;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(6);
+}
+
+@keyframes spriteMoveJ {
+    0% {
+        background-position: 0px 0;
+    }
+    100% {
+        background-position: -1000px 0;
+    }
+}
+
+@keyframes spriteMoveFrog {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 -1500px;
+    }
 }
 
