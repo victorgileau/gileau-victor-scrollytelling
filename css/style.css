@@ -128,6 +128,10 @@ Header
 Sections
 */
 
+section {
+    border: 1px solid red;
+}
+
 #chapitre1 {
     width: 100vw;
     height: 100vh;
@@ -191,7 +195,7 @@ footer {
 SpriteSheet
 */
 
-.all {
+.is-scrolling {
     height: 300vh;
 }
 
@@ -209,6 +213,7 @@ SpriteSheet
 }
 
 .sprite {
+    animation-play-state: paused;
     width: 250px;
     height: 250px;
     background-size: cover;

@@ -18,9 +18,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 let tl = gsap.timeline({
     scrollTrigger: {
-        trigger: '.all',
+        trigger: '.is-scrolling',
         start: 'top center',
-        end: '+=1000px',
+        end: '+=2000px',
         markers: true,
         scrub: true,
         pin: true,
