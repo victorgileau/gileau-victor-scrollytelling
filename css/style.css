@@ -195,7 +195,7 @@ footer {
 SpriteSheet
 */
 
-.is-scrolling {
+.all {
     height: 300vh;
 }
 
@@ -210,6 +210,10 @@ SpriteSheet
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.is-scrolling .sprite {
+    animation-play-state: running;
 }
 
 .sprite {
@@ -259,6 +263,42 @@ SpriteSheet
     }
     100% {
         background-position: 0 -1800px;
+    }
+}
+
+@keyframes spriteMoveJSmall {
+    0% {
+        background-position: 0px 0;
+    }
+    100% {
+        background-position: -800px 0;
+    }
+}
+
+@keyframes spriteMoveFrogSmall {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 -1500px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        flex-direction: column;
+        height: 80%;
+    }
+    .sprite.frog {
+        width: 250px;
+        height: 250px;
+        animation-name: spriteMoveFrogSmall;
+    }
+
+    .sprite.standJ, .sprite.walkJ {
+        width: 200px;
+        height: 200px;
+        animation-name: spriteMoveJSmall;
     }
 }
 

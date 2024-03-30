@@ -14,6 +14,29 @@ gsap.from(['.fleche-down'], {
 
 //SrpiteSheet
 
+const sprite = document.querySelectorAll('.sprite');
+const body = document.querySelector('body');
+
+window.addEventListener('scroll', () => {
+  let y = window.scrollY;
+  if (y > 300) {
+    addClassIsScrolling();
+  }
+  else if (y < 300) {
+    setTimeout(removeClassIsScrolling, 100);
+  }
+});
+
+function removeClassIsScrolling() {
+    body.classList.remove('is-scrolling');
+}
+
+function addClassIsScrolling() {
+    body.classList.add('is-scrolling');
+}
+
+/*
+
 gsap.registerPlugin(ScrollTrigger);
 
 let tl = gsap.timeline({
@@ -43,4 +66,6 @@ tl.to(['.sprite'], {
     backgroundColor: 'rgba(0,0,0,0)',
     ease: 'none',
     duration: 1,
-})
+});
+
+*/
