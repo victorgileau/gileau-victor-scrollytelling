@@ -19,12 +19,8 @@ const body = document.querySelector('body');
 
 window.addEventListener('scroll', () => {
   let y = window.scrollY;
-  if (y > 300) {
-    addClassIsScrolling();
-  }
-  else if (y < 300) {
-    setTimeout(removeClassIsScrolling, 100);
-  }
+  body.classList.add('is-scrolling');
+  setTimeout(removeClassIsScrolling, 100);
 });
 
 function removeClassIsScrolling() {
@@ -41,7 +37,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 let tl = gsap.timeline({
     scrollTrigger: {
-        trigger: '.is-scrolling',
+        trigger: '.all',
         start: 'top center',
         end: '+=2000px',
         markers: true,
