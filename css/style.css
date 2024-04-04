@@ -66,7 +66,7 @@ Header
 
 .header {
     background-image: url(../media/img/img_arriere_plan/scene-3-chapitre3.jpg);
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: repeat-y;
     width: 100vw;
@@ -113,9 +113,6 @@ Header
 }
 
 @media screen and (max-width: 650px) {
-    .header {
-        background-size: 200%;
-    }
     .header .fleche-down {
         width: 25vw;
     }
@@ -130,45 +127,35 @@ Sections
 
 section {
     border: 1px solid red;
+    width: auto;
+    height: 100vh;
+    background-size: cover;
 }
 
 #chapitre1 {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../media/img/img_elements_visuels/chap1-2/background.png);
 }
 
 #chapitre2 {
-    width: 100vw;
-    height: 100vh;
     background-color: var(--alphaMoiter);
     background-image: url(../media/img/img_elements_visuels/chap1-2/background.png);
     background-blend-mode: multiply;
 }
 
 #chapitre3 {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../media/img/img_elements_visuels/chap3/background-tomber.jpg);
-    background-size: 80%;
-    background-repeat: repeat-x;
+    height: 500vh;
 }
 
 #chapitre4 {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../media/img/img_elements_visuels/chap4-5/background-cave-entrer.jpg);
 }
 
 #chapitre5 {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../media/img/img_arriere_plan/chap1-2-background-noir-nuit.jpg);
 }
 
 #chapitre6 {
-    width: 100vw;
-    height: 100vh;
     background-color: var(--alphaMoiter);
     background-image: url(../media/img/img_arriere_plan/chap1-2-background-noir-nuit.jpg);
     background-blend-mode: darken;
