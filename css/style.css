@@ -79,7 +79,7 @@ Header
 
 .header h1 {
     font-size: 8vmin;
-    align-self: start;
+    align-self: center;
     color: var(--blanc);
     padding-left: 4vmin;
     text-shadow: 5px 5px var(--noir);
@@ -100,6 +100,18 @@ Header
     text-shadow: 0 0 10px var(--blanc);
 }
 
+.header p.description {
+    font-size: 2vmin;
+    background-color: var(--alphaMoiter);
+    padding: 1.5vmin;
+    border-radius: 25px;
+    backdrop-filter: blur(2px);
+    width: 50vw;
+    height: auto;
+    text-align: center;
+    line-height: 2em;
+}
+
 .header .down {
     display: flex;
     flex-direction: column;
@@ -113,11 +125,17 @@ Header
 }
 
 @media screen and (max-width: 650px) {
+    .header h1 {
+        align-self: flex-start;
+    }
+    .header {
+        height: 120vh;
+    }
     .header .fleche-down {
         width: 25vw;
     }
-    .header p {
-        font-size: 3vmin;
+    .header p, .header p.description {
+        font-size: 2.8vmin;
     }
 }
 
@@ -278,7 +296,7 @@ SpriteSheet
 @media screen and (max-width: 800px) {
     .content {
         flex-direction: column;
-        height: 80%;
+        height: 95%;
     }
     .sprite.frog {
         width: 250px;
