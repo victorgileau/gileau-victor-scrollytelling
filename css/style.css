@@ -2,7 +2,7 @@
     --noir: black;
     --blanc: white;
     --alphaZero: rgba(0,0,0,0);
-    --alphaMoiter: rgba(0,0,0,0.5);
+    --alphaMoiter: rgba(0,0,0,0.8);
 }
 
 * {
@@ -65,7 +65,7 @@ Header
 */
 
 .header {
-    background-image: url(../media/img/img_arriere_plan/scene-3-chapitre3.jpg);
+    background-image: url(../media/img/img_arriere_plan/scene-3-chapitre3.webp);
     background-size: cover;
     background-position: center;
     background-repeat: repeat-y;
@@ -151,31 +151,31 @@ section {
 }
 
 #chapitre1 {
-    background-image: url(../media/img/img_elements_visuels/chap1-2/background.png);
+    background-image: url(../media/img/img_arriere_plan/bg_chap1-2.webp);
 }
 
 #chapitre2 {
     background-color: var(--alphaMoiter);
-    background-image: url(../media/img/img_elements_visuels/chap1-2/background.png);
+    background-image: url(../media/img/img_arriere_plan/bg_chap1-2.webp);
     background-blend-mode: multiply;
 }
 
 #chapitre3 {
-    background-image: url(../media/img/img_elements_visuels/chap3/background-tomber.jpg);
+    background-image: url(../media/img/img_arriere_plan/bg-chap3.webp);
     height: 500vh;
 }
 
 #chapitre4 {
-    background-image: url(../media/img/img_elements_visuels/chap4-5/background-cave-entrer.jpg);
+    background-image: url(../media/img/img_arriere_plan/bg-chap4-5.webp);
 }
 
 #chapitre5 {
-    background-image: url(../media/img/img_arriere_plan/chap1-2-background-noir-nuit.jpg);
+    background-image: url(../media/img/img_arriere_plan/bg-chap6.webp);
 }
 
 #chapitre6 {
     background-color: var(--alphaMoiter);
-    background-image: url(../media/img/img_arriere_plan/chap1-2-background-noir-nuit.jpg);
+    background-image: url(../media/img/img_arriere_plan/bg-chap6.webp);
     background-blend-mode: darken;
 }
 
@@ -183,11 +183,18 @@ section {
 Footer
 */
 
+footer em {
+    font-family: 'Grunge';
+    color: var(--blanc);
+    text-shadow: 0 0 10px var(--blanc);
+}
+
 footer {
+    line-height: 2em;
     width: 100%;
-    height: auto;
+    height: 10vh;
     background-color: var(--blanc);
-    background-image: url(../media/img/img_arriere_plan/chap1-2-background-noir-nuit.jpg), linear-gradient(to right, var(--noir), var(--blanc), var(--noir));
+    background-image: url(../media/img/img_arriere_plan/bg-chap6.webp), linear-gradient(to right, var(--noir), var(--blanc), var(--noir));
     background-blend-mode: multiply;
     color: var(--blanc);
     display: flex;
@@ -202,7 +209,7 @@ SpriteSheet
 
 .all {
     height: 300vh;
-    background-image: url(../media/img/img_arriere_plan/chap1-2-background-noir-nuit.jpg);
+    background-image: url(../media/img/img_arriere_plan/bg-chap6.webp);
     opacity: 0.3;
     filter: blur(5px);
 }
@@ -226,8 +233,8 @@ SpriteSheet
 
 .sprite {
     animation-play-state: paused;
-    width: 35vw;
-    height: 35vw;
+    width: 30vw;
+    height: 30vw;
     background-size: 400% 100%;
     /*
     width: 250px;
@@ -243,20 +250,18 @@ SpriteSheet
 }
 
 .sprite.standJ {
-    background-image: url(../media/img/img_personnages/J-stand-back-v1-papier.png);
+    background-image: url(../media/img/img_personnages/J-stand-back-v1-papier.webp);
 }
 
 .sprite.walkJ {
-    background-image: url(../media/img/img_personnages/J-walk-v2-papier.png);
-    left: 25%;
+    background-image: url(../media/img/img_personnages/J-walk-v2-papier.webp);
 }
 
 .sprite.frog {
-    background-image: url(../media/img/img_personnages/toad-anim-pixel-papier.png);
-    left: 50%;
-    width: 35vw;
-    height: 35vw;
+    background-image: url(../media/img/img_personnages/toad-anim-pixel-papier.webp);
     background-size: 100% 600%;
+    width: 40vw;
+    height: 40vw;
     /*height: 300px;
     background-size: cover;*/
     animation-name: spriteMoveFrogResponsive;
@@ -283,65 +288,15 @@ SpriteSheet
     }
 }
 
-/*
-@keyframes spriteMoveJ {
-    0% {
-        background-position: 0px 0;
-    }
-    100% {
-        background-position: -1000px 0;
-    }
-}
 
-@keyframes spriteMoveFrog {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 0 -1800px;
-    }
-}
-
-@keyframes spriteMoveJSmall {
-    0% {
-        background-position: 0px 0;
-    }
-    100% {
-        background-position: -800px 0;
-    }
-}
-
-@keyframes spriteMoveFrogSmall {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 0 -1500px;
-    }
-}
-*/
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 750px) {
     .content {
         flex-direction: column;
-        height: 90vh;
+        height: 100vh;
     }
     .sprite.frog {
         width: 50vw;
         width: 50vw;
     }
-    /*
-    .sprite.frog {
-        width: 250px;
-        height: 250px;
-        animation-name: spriteMoveFrogSmall;
-    }
-
-    .sprite.standJ, .sprite.walkJ {
-        width: 200px;
-        height: 200px;
-        animation-name: spriteMoveJSmall;
-    }
-    */
 }
 
