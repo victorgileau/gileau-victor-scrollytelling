@@ -1,5 +1,7 @@
 //Index
 
+gsap.registerPlugin(ScrollTrigger);
+
 gsap.from(['.fleche-down'], {
     duration: 0.8,
     opacity: 0,
@@ -10,31 +12,19 @@ gsap.from(['.fleche-down'], {
     },
 });
 
-
-
-//SrpiteSheet
-
-const sprite = document.querySelectorAll('.sprite');
-const body = document.querySelector('body');
-
-window.addEventListener('scroll', () => {
-  let y = window.scrollY;
-  body.classList.add('is-scrolling');
-  setTimeout(removeClassIsScrolling, 100);
-});
-
-function removeClassIsScrolling() {
-    body.classList.remove('is-scrolling');
-}
-
-function addClassIsScrolling() {
-    body.classList.add('is-scrolling');
-}
+gsap.utils.toArray('section').forEach((chap) => {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: chap,
+            start: 'top 100%',
+            end: '50% 0',
+            markers: true,
+            toggleActions: 'play pause reverse pause',
+        }
+    }).to(chap, {x: 100, duration: 1});
+})
 
 /*
-
-gsap.registerPlugin(ScrollTrigger);
-
 let tl = gsap.timeline({
     scrollTrigger: {
         trigger: '.all',
@@ -63,5 +53,24 @@ tl.to(['.sprite'], {
     ease: 'none',
     duration: 1,
 });
-
 */
+
+//SrpiteSheet
+
+const sprite = document.querySelectorAll('.sprite');
+const body = document.querySelector('body');
+
+window.addEventListener('scroll', () => {
+  let y = window.scrollY;
+  body.classList.add('is-scrolling');
+  setTimeout(removeClassIsScrolling, 100);
+});
+
+function removeClassIsScrolling() {
+    body.classList.remove('is-scrolling');
+}
+
+function addClassIsScrolling() {
+    body.classList.add('is-scrolling');
+}
+
