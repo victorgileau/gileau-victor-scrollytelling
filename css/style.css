@@ -148,11 +148,104 @@ section {
     width: auto;
     height: 100vh;
     background-size: cover;
+    position: relative;
 }
+
+/*
+Chapitre 1
+*/
 
 #chapitre1 {
     background-image: url(../media/img/img_arriere_plan/bg_chap1-2.webp);
+    overflow: hidden;
 }
+
+#chapitre1 .sprite.standJ {
+    bottom: 6vh;
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+}
+
+#chapitre1 .sol-1 {
+    position: absolute;
+    background-image: url(../media/img/img_elements_visuels/chap1-2/chap1-2_sol-devant.webp);
+    background-size: 100%;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    min-height: 20vh;
+    width: 100vw;
+    bottom: 0;
+    z-index: 2;
+}
+
+#chapitre1 .sol-2 {
+    position: absolute;
+    background-image: url(../media/img/img_elements_visuels/chap1-2/chap1-2_sol-middle.webp);
+    background-size: 100%;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    height: 10vh;
+    width: 100vw;
+    bottom: 0;
+    z-index: 0;
+}
+
+#chapitre1 .roche {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+
+#chapitre1 .roche.one {
+    background-image: url(../media/img/img_elements_visuels/chap1-2/chap1-2_roche-big.webp);
+    background-position: 0 100%;
+    height: 80vh;
+    width: 80vw;
+    bottom: 0;
+    right: -50vw;
+}
+
+#chapitre1 .roche.tow {
+    background-image: url(../media/img/img_elements_visuels/chap1-2/chap1-2_roche-small-large-v2.webp);
+    background-position: 0 100%;
+    height: 90vh;
+    width: 90vw;
+    bottom: -20vh;
+    right: -30vw;
+}
+
+#chapitre1 .roche.tree {
+    background-image: url(../media/img/img_elements_visuels/chap1-2/chap1-2_roche-small-large.webp);
+    background-position: 0 100%;
+    transform: scaleX(-1);
+    filter: brightness(150%);
+    height: 90vh;
+    width: 90vw;
+    bottom: 0;
+    right: -40vw;
+}
+
+
+@media screen and (min-width: 1000px) {
+    #chapitre1  .roche.tree {
+        right: -10vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #chapitre1 .sprite.standJ {
+        bottom: 20px;
+        width: 40vw;
+        height: 40vw;
+    }
+}
+
+/*
+Chapitre 2
+*/
 
 #chapitre2 {
     background-color: var(--alphaMoiter);
@@ -160,23 +253,64 @@ section {
     background-blend-mode: multiply;
 }
 
+/*
+Chapitre 3
+*/
+
 #chapitre3 {
     background-image: url(../media/img/img_arriere_plan/bg-chap3.webp);
     height: 500vh;
 }
 
+/*
+Chapitre 4
+*/
+
 #chapitre4 {
     background-image: url(../media/img/img_arriere_plan/bg-chap4-5.webp);
 }
+
+/*
+Chapitre 5
+*/
 
 #chapitre5 {
     background-image: url(../media/img/img_arriere_plan/bg-chap6.webp);
 }
 
+/*
+Chapitre 6
+*/
+
 #chapitre6 {
     background-color: var(--alphaMoiter);
     background-image: url(../media/img/img_arriere_plan/bg-chap6.webp);
     background-blend-mode: darken;
+}
+
+/*
+Note pour prof
+*/
+
+ul.technique-gsap{
+    background: rgba(0,0,0,0.3);
+    color: white;
+    font-size: 10px;
+    font-family: monospace;
+    font-weight: 400;
+    width: auto;
+    display: inline-block;
+    padding: 10px 20px 12px 20px;
+    margin: 0;
+    max-width: 300px;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+ul.technique-gsap li{
+    margin: 5px 0;
 }
 
 /*

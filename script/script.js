@@ -12,6 +12,12 @@ gsap.from(['.fleche-down'], {
     },
 });
 
+const tlChap1 = gsap.timeline({
+}).to('#chapitre1.sprite.standJ', { x: '90%', duration: 5});
+
+tlChap1.play();
+
+/*
 gsap.utils.toArray('section').forEach((chap) => {
     gsap.timeline({
         scrollTrigger: {
@@ -24,7 +30,6 @@ gsap.utils.toArray('section').forEach((chap) => {
     }).to(chap, {x: 100, duration: 1});
 })
 
-/*
 let tl = gsap.timeline({
     scrollTrigger: {
         trigger: '.all',
