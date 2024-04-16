@@ -145,7 +145,7 @@ Sections
 
 section {
     border: 1px solid red;
-    width: auto;
+    width: 100vw;
     height: 100vh;
     background-size: cover;
     position: relative;
@@ -157,26 +157,44 @@ Chapitre 1
 
 #chapitre1 {
     background-image: url(../media/img/img_arriere_plan/bg_chap1-2.webp);
+    background-repeat: repeat-x;
     overflow: hidden;
 }
 
-#chapitre1 .sprite.standJ {
+#chapitre1.bgMove {
+    animation-play-state: running;
+    animation: chap1BGMove;
+    animation-duration: 6s;
+}
+
+#chapitre1.bgMoveStop {
+    animation-play-state: paused;
+}
+
+@keyframes chap1BGMove {
+    0% { background-position: 0 0;}
+    100% { background-position: -300px 0;}
+}
+
+
+#chapitre1 .sprite {
     bottom: 6vh;
     position: absolute;
     width: 25vw;
     height: 25vw;
+    z-index: 2;
 }
 
 #chapitre1 .sol-1 {
     position: absolute;
     background-image: url(../media/img/img_elements_visuels/chap1-2/chap1-2_sol-devant.webp);
-    background-size: 100%;
+    background-size: 25%;
     background-position: 0 100%;
-    background-repeat: no-repeat;
-    min-height: 20vh;
-    width: 100vw;
+    background-repeat: repeat-x;
+    min-height: 10vh;
+    width: 500vw;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
 }
 
 #chapitre1 .sol-2 {
@@ -185,7 +203,7 @@ Chapitre 1
     background-size: 100%;
     background-position: 0 100%;
     background-repeat: no-repeat;
-    height: 10vh;
+    height: 20vh;
     width: 100vw;
     bottom: 0;
     z-index: 0;
@@ -206,6 +224,7 @@ Chapitre 1
     width: 80vw;
     bottom: 0;
     right: -50vw;
+    z-index: 3;
 }
 
 #chapitre1 .roche.tow {
@@ -226,18 +245,21 @@ Chapitre 1
     width: 90vw;
     bottom: 0;
     right: -40vw;
+    z-index: 1;
 }
-
 
 @media screen and (min-width: 1000px) {
     #chapitre1  .roche.tree {
         right: -10vw;
     }
+    #chapitre1 .sol-1 {
+        height: 20vh;
+    }
 }
 
-@media screen and (max-width: 500px) {
-    #chapitre1 .sprite.standJ {
-        bottom: 20px;
+@media screen and (max-width: 700px) {
+    #chapitre1 .sprite {
+        bottom: 15px;
         width: 40vw;
         height: 40vw;
     }
