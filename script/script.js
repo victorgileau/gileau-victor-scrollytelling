@@ -2,8 +2,10 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-const chap1SpriteStand = document.querySelector('#chapitre1 .sprite');
+const chap1SpriteStand = document.querySelector('#chapitre1 .man');
+const chap2SpriteJ = document.querySelector('#chapitre2 .man');
 const chapitre1 = document.querySelector('#chapitre1');
+const chapitre2 = document.querySelector('#chapitre2');
 const bodyIndex = document.querySelector('body');
 
 gsap.timeline().from(['.fleche-down'], {
@@ -29,6 +31,27 @@ gsap.timeline().from(['.fleche-down'], {
     }, '-=0.5'
 ).to('#chapitre1 .sol-1', { scrub: 1,x: '-500px', duration: 3}, '-=5')
 .to('#chapitre1 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=2' )
+.to('#chapitre2 .sprite.man', {
+    x: '30vw',
+    duration: 5,
+    onStart: () => {
+        bodyIndex.classList.add('is-scrolling');
+        chap2SpriteJ.classList.add('walkJ');
+        chapitre2.classList.add('bgMove');
+    },
+    onComplete: () => {
+        chap2SpriteJ.classList.remove('walkJ');
+        chap2SpriteJ.classList.add('standJ');
+        chapitre2.classList.add('bgMoveStop');
+    }
+    }, '-=0.5'
+).to('#chapitre2 .sol-1', { scrub: 1,x: '-500px', duration: 3}, '-=5')
+.to('#chapitre2 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=3' )
+.to('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', { scrub: 1,x: '-8vmin', duration: 3}, '-=3' )
+.to('.cercleBlanc', { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=5')
+.to('#chapitre3 .papier, #chapitre3 .sprite.man', { y: '300vh', duration: 10, ease:'ease.in'})
+.to('#chapitre3 .sprite.man', { rotation: 360, duration: 1.5, ease:'none', repeat: -1}, '-=12')
+.to('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1}, '-=8')
 
 /*
 gsap.from(['.fleche-down'], {
