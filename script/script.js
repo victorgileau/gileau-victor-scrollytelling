@@ -32,7 +32,7 @@ gsap.timeline().from(['.fleche-down'], {
 ).to('#chapitre1 .sol-1', { scrub: 1,x: '-500px', duration: 3}, '-=5')
 .to('#chapitre1 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=2' )
 .to('#chapitre2 .sprite.man', {
-    x: '30vw',
+    x: '30vmin',
     duration: 5,
     onStart: () => {
         bodyIndex.classList.add('is-scrolling');
