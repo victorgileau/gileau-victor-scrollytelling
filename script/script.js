@@ -4,8 +4,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const chap1SpriteStand = document.querySelector('#chapitre1 .man');
 const chap2SpriteJ = document.querySelector('#chapitre2 .man');
+const chap4SpriteJ = document.querySelector('#chapitre4 .man');
+const chap5SpriteJ = document.querySelector('#chapitre5 .man');
 const chapitre1 = document.querySelector('#chapitre1');
 const chapitre2 = document.querySelector('#chapitre2');
+const chapitre4 = document.querySelector('#chapitre4');
+const chapitre5 = document.querySelector('#chapitre5');
 const bodyIndex = document.querySelector('body');
 
 gsap.timeline().from(['.fleche-down'], {
@@ -49,9 +53,45 @@ gsap.timeline().from(['.fleche-down'], {
 .to('#chapitre2 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=3' )
 .to('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', { scrub: 1,x: '-8vmin', duration: 3}, '-=3' )
 .to('.cercleBlanc', { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=5')
-.to('#chapitre3 .papier, #chapitre3 .sprite.man', { y: '300vh', duration: 10, ease:'ease.in'})
+.to('#chapitre3 .papier, #chapitre3 .sprite.man', { y: '380vh', duration: 10, ease:'ease.in'})
 .to('#chapitre3 .sprite.man', { rotation: 360, duration: 1.5, ease:'none', repeat: -1}, '-=12')
 .to('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1}, '-=8')
+.to('#chapitre4 .sprite.man', {
+    x: '70vw',
+    duration: 5,
+    onStart: () => {
+        if (bodyIndex.classList.contains('is-scrolling') != true) {
+            bodyIndex.classList.add('is-scrolling');
+        }
+        chap4SpriteJ.classList.add('walkJ');
+        chapitre4.classList.add('bgMove');
+    },
+    onComplete: () => {
+        chap2SpriteJ.classList.remove('walkJ');
+        chap4SpriteJ.classList.add('standJ');
+        chapitre4.classList.add('bgMoveStop');
+    }
+    },
+).to('#chapitre4 .sol-1, #chapitre4 .sol-2', { scrub: 1,x: '-300px', duration: 3}, '-=5')
+.to('#chapitre4 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=3' )
+.to('#chapitre5 .sprite.man', {
+    x: '50vw',
+    duration: 5,
+    onStart: () => {
+        if (bodyIndex.classList.contains('is-scrolling') != true) {
+            bodyIndex.classList.add('is-scrolling');
+        }
+        chap5SpriteJ.classList.add('walkJ');
+        chapitre5.classList.add('bgMove');
+    },
+    onComplete: () => {
+        chap5SpriteJ.classList.remove('walkJ');
+        chap5SpriteJ.classList.add('standJ');
+        chapitre5.classList.add('bgMoveStop');
+    }
+    },
+).to('#chapitre5 .sol-1, #chapitre4 .sol-2', { scrub: 1,x: '-300px', duration: 3}, '-=5')
+.to('#chapitre5 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=3' )
 
 /*
 gsap.from(['.fleche-down'], {

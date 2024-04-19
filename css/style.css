@@ -513,6 +513,106 @@ Chapitre 4
 
 #chapitre4 {
     background-image: url(../media/img/img_arriere_plan/bg-chap4-5.webp);
+    overflow: hidden;
+}
+
+#chapitre4.bgMove {
+    animation-play-state: running;
+    animation: chap4BGMove;
+    animation-duration: 6s;
+}
+
+#chapitre4.bgMoveStop {
+    animation-play-state: paused;
+}
+
+@keyframes chap4BGMove {
+    0% { background-position: 0 0;}
+    100% { background-position: -300px 0;}
+}
+
+
+#chapitre4 .sprite {
+    bottom: 6vh;
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+    z-index: 2;
+}
+
+#chapitre4 .roche {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 10px 5px var(--noir));
+    z-index: 1;
+}
+
+#chapitre4 .sol-1 {
+    position: absolute;
+    background-image: url(../media/img/img_elements_visuels/chap4-5/chap4-5_fond-devant.webp);
+    background-size: 75%;
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    min-height: 20vh;
+    width: 250vw;
+    bottom: 0;
+    z-index: 4;
+}
+
+#chapitre4 .sol-2 {
+    position: absolute;
+    background-image: url(../media/img/img_elements_visuels/chap4-5/chap4-5_fond-moyen.webp);
+    background-size: 75%;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 500vw;
+    bottom: 0;
+    z-index: 0;
+}
+
+#chapitre4 .roche.tow {
+    background-image: url(../media/img/img_elements_visuels/chap4-5/chap4-5_front-rock-cave.webp);
+    background-position: 0 100%;
+    height: 70vh;
+    width: 70vw;
+    bottom: 0;
+    right: -30vw;
+    z-index: 3;
+}
+
+#chapitre4 .roche.one {
+    background-image: url(../media/img/img_elements_visuels/chap4-5/chap4-5_middle-rock-cave.webp);
+    background-size: 100%;
+    background-position: 0 100%;
+    height: 70vh;
+    width: 90vw;
+    bottom: 30vh;
+    right: -35vw;
+    z-index: 1;
+}
+
+#chapitre4 .roche.tree {
+    background-image: url(../media/img/img_elements_visuels/chap4-5/chap4-5_back-rock-cave.webp);
+    background-position: 0 100%;
+    transform: scaleX(-1);
+    height: 90vh;
+    width: 90vw;
+    bottom: 0vh;
+    right: -30vw;
+    z-index: 0;
+}
+
+@media screen and (max-width: 700px) {
+    #chapitre4 .roche.one {
+        bottom: 20vh;
+    }
+    #chapitre4 .sprite.man {
+        bottom: 15px;
+        width: 40vw;
+        height: 40vw;
+    }
 }
 
 /*
@@ -521,6 +621,94 @@ Chapitre 5
 
 #chapitre5 {
     background-image: url(../media/img/img_arriere_plan/bg-chap6.webp);
+    overflow: hidden;
+}
+
+#chapitre5.bgMove {
+    animation-play-state: running;
+    animation: chap5BGMove;
+    animation-duration: 6s;
+}
+
+#chapitre5.bgMoveStop {
+    animation-play-state: paused;
+}
+
+@keyframes chap5BGMove {
+    0% { background-position: 0 0;}
+    100% { background-position: -200px 0;}
+}
+
+#chapitre5 .sprite {
+    bottom: 6vh;
+    position: absolute;
+    width: 25vw;
+    height: 25vw;
+    z-index: 2;
+}
+
+#chapitre5 .roche {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 10px 5px var(--noir));
+    z-index: 1;
+}
+
+#chapitre5 .sol-1 {
+    position: absolute;
+    background-image: url(../media/img/img_elements_visuels/chap4-5/chap4-5_fond-devant.webp);
+    background-size: 75%;
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    min-height: 20vh;
+    width: 250vw;
+    bottom: 0;
+    z-index: 4;
+}
+
+#chapitre5 .sol-2 {
+    position: absolute;
+    background-image: url(../media/img/img_elements_visuels/chap4-5/chap4-5_fond-moyen.webp);
+    background-size: 75%;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 500vw;
+    bottom: 0;
+    z-index: 0;
+}
+
+#chapitre5 .roche.tow {
+    background-image: url(../media/img/img_elements_visuels/chap4-5/chap4-5_front-rock-cave.webp);
+    background-position: 0 100%;
+    height: 70vh;
+    width: 70vw;
+    bottom: 0;
+    left: -30vw;
+    z-index: 3;
+}
+
+#chapitre5 .roche.one {
+    background-image: url(../media/img/img_elements_visuels/chap4-5/chap4-5_middle-rock-cave.webp);
+    background-size: 100%;
+    background-position: 0 100%;
+    height: 70vh;
+    width: 70vw;
+    bottom: 30vh;
+    left: -35vw;
+    z-index: 1;
+}
+
+#chapitre5 .roche.tree {
+    background-image: url(../media/img/img_elements_visuels/chap4-5/chap4-5_back-rock-cave.webp);
+    background-position: 0 100%;
+    transform: scaleX(-1);
+    height: 90vh;
+    width: 90vw;
+    bottom: 0vh;
+    left: -50vw;
+    z-index: 0;
 }
 
 /*
@@ -531,6 +719,54 @@ Chapitre 6
     background-color: var(--alphaMoiter);
     background-image: url(../media/img/img_arriere_plan/bg-chap6.webp);
     background-blend-mode: darken;
+    overflow: hidden;
+}
+
+#chapitre6 .perso {
+    position: absolute;
+    background-image: url(../media/img/img_elements_visuels/perso_big.webp);
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 40vmin;
+    filter: drop-shadow(0 0 3em var(--blanc)) blur(2px);
+    bottom: -20vh;
+}
+
+#chapitre6 .ball {
+    position: absolute;
+    background-image: url(../media/img/img_elements_visuels/chap5-6/chap5-6_ball-v1.webp);
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    width: 8vw;
+    height: 8vw;
+    left: 10vw;
+}
+
+#chapitre6 .star {
+    position: absolute;
+    background-image: url(../media/img/img_elements_visuels/chap5-6/chap5-6_star-v1.webp);
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    width: 8vw;
+    height: 16vw;
+    left: 25vw;
+}
+
+#chapitre6 .effect {
+    position: absolute;
+    background-image: url(../media/img/img_elements_visuels/chap5-6/chap5-6_effet-back-chap6.webp);
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    width: 10vw;
+    height: 10vw;
+    left: 40vw;
 }
 
 /*
@@ -611,7 +847,7 @@ SpriteSheet
     justify-content: space-around;
 }
 
-.is-scrolling .sprite.man, .is-scrolling .sprite {
+.is-scrolling .sprite.man, .is-scrolling .sprite.frog {
     animation-play-state: running;
 }
 
@@ -642,6 +878,7 @@ SpriteSheet
 }
 
 .sprite.frog {
+    animation-play-state: paused;
     background-image: url(../media/img/img_personnages/toad-anim-pixel-papier.webp);
     background-size: 100% 600%;
     width: 40vw;
