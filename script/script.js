@@ -40,7 +40,6 @@ gsap.timeline().from(['.fleche-down'], {
     duration: 5,
     onStart: () => {
         bodyIndex.classList.add('is-scrolling');
-        chap2SpriteJ.classList.add('walkJ');
         chapitre2.classList.add('bgMove');
     },
     onComplete: () => {
@@ -67,7 +66,7 @@ gsap.timeline().from(['.fleche-down'], {
         chapitre4.classList.add('bgMove');
     },
     onComplete: () => {
-        chap2SpriteJ.classList.remove('walkJ');
+        chap4SpriteJ.classList.remove('walkJ');
         chap4SpriteJ.classList.add('standJ');
         chapitre4.classList.add('bgMoveStop');
     }
