@@ -14,6 +14,7 @@
 body {
     overflow-x: hidden;
     width: 100vw;
+    background-color: var(--noir);
 }
 
 
@@ -144,12 +145,42 @@ Header
 Sections
 */
 
+div {
+    border: 1px solid red;
+}
+
 section {
     border: 1px solid red;
     width: 100%;
     height: 100vh;
     background-size: cover;
     position: relative;
+}
+
+.textBox {
+    top: 5vh;
+    width: 60vw;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 5vmin;
+    z-index: 5;
+}
+
+.textBox .text {
+    font-size: 3vmin;
+    text-align: left;
+    text-shadow: 0 0 10px var(--blanc);
+    letter-spacing: 0.05em;
+}
+
+.black .textBox .text {
+    color: var(--blanc);
+    font-size: 3vmin;
+    text-align: left;
+    text-shadow: 0 0 10px var(--noir);
+    letter-spacing: 0.1em;
 }
 
 /*
@@ -160,6 +191,10 @@ Chapitre 1
     background-image: url(../media/img/img_arriere_plan/bg_chap1-2.webp);
     background-repeat: repeat-x;
     overflow: hidden;
+}
+
+#chapitre1 .textBox {
+    text-shadow: 0 0 10px var(--blanc);
 }
 
 #chapitre1.bgMove {
@@ -447,6 +482,35 @@ Chapitre 3
     z-index: 2;
 }
 
+#chapitre3 .fromeBriser {
+    width: 25vw;
+    aspect-ratio: 1/1;
+    position: absolute;
+    background-position: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    left: 0;
+    right: 0;
+    top: 50vh;
+    margin: auto;
+}
+
+#chapitre3 .fromeBriser.un {
+    background-image: url(../media/img/img_elements_visuels/chap3/chap3-forme_briser_1.webp);
+}
+
+#chapitre3 .fromeBriser.deux {
+    background-image: url(../media/img/img_elements_visuels/chap3/chap3-forme_briser_2.webp);
+}
+
+#chapitre3 .fromeBriser.troix {
+    background-image: url(../media/img/img_elements_visuels/chap3/chap3-forme_briser_3.webp);
+}
+
+#chapitre3 .fromeBriser.quatre {
+    background-image: url(../media/img/img_elements_visuels/chap3/chap3-forme_briser_4.webp);
+}
+
 #chapitre3 .papier {
     position: absolute;
     background-image: url(../media/img/img_elements_visuels/chap3/chap3-papier.webp);
@@ -710,7 +774,7 @@ Chapitre 5
     height: 70vh;
     width: 70vw;
     bottom: 0;
-    left: -10vw;
+    left: -40vw;
     z-index: 3;
 }
 
@@ -736,8 +800,6 @@ Chapitre 5
     z-index: 0;
 }
 
-
-
 /*
 Chapitre 6
 */
@@ -757,7 +819,7 @@ Chapitre 6
     background-repeat: no-repeat;
     height: 100%;
     width: 40vmin;
-    filter: drop-shadow(0 0 3em var(--blanc)) blur(2px);
+    filter: drop-shadow(0 0 3em var(--blanc)) blur(1.5px);
     bottom: -20vh;
 }
 

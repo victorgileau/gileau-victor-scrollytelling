@@ -1,6 +1,7 @@
 //Index
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 
 const chap1SpriteStand = document.querySelector('#chapitre1 .man');
 const chap2SpriteJ = document.querySelector('#chapitre2 .man');
@@ -33,8 +34,13 @@ gsap.timeline().from(['.fleche-down'], {
         chapitre1.classList.add('bgMoveStop');
     }
     }, '-=0.5'
-).to('#chapitre1 .sol-1', { scrub: 1,x: '-500px', duration: 3}, '-=5')
-.to('#chapitre1 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=2' )
+).to('#chapitre1 .text', {
+    duration: 8,
+    text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
+    ease: "none"
+}, '-=5')
+.to('#chapitre1 .sol-1', { scrub: 1,x: '-500px', duration: 3}, '-=8')
+.to('#chapitre1 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=2.6' )
 .to('#chapitre2 .sprite.man', {
     x: '30vmin',
     duration: 5,
@@ -48,14 +54,25 @@ gsap.timeline().from(['.fleche-down'], {
         chapitre2.classList.add('bgMoveStop');
     }
     }, '-=0.5'
-).to('#chapitre2 .sol-1', { scrub: 1,x: '-500px', duration: 3}, '-=5')
-.to('#chapitre2 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=3' )
+).to('#chapitre2 .text', {
+    duration: 8,
+    text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
+    ease: "none"
+}, '-=5').to('#chapitre2 .sol-1', { scrub: 1,x: '-500px', duration: 3}, '-=8')
+.to('#chapitre2 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=3')
 .to('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', { scrub: 1,x: '-8vmin', duration: 3}, '-=3' )
 .to('.cercleBlanc', { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=5')
-.to('#chapitre3 .papier, #chapitre3 .sprite.man', { y: '380vh', duration: 10, ease:'ease.in'})
+.to('#chapitre3 .text', {
+    duration: 8,
+    text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
+    ease: "none"
+}, '-=5')
+.to('#chapitre3 .papier, #chapitre3 .sprite.man', { y: '380vh', duration: 10, ease:'ease.in'}, '-=8')
 .to('#chapitre3 .sprite.man', { rotation: 360, duration: 1.5, ease:'none', repeat: -1}, '-=12')
-.to('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1}, '-=8')
-.to('#chapitre4 .sprite.man', {
+.to(['#chapitre3 .fromeBriser'], { y: '50vh', duration: 5, stagger: { each: 2}})
+.to('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1}, '-=8');
+
+let timeline2 = gsap.timeline().to('#chapitre4 .sprite.man', {
     x: '70vw',
     duration: 5,
     onStart: () => {
@@ -71,8 +88,13 @@ gsap.timeline().from(['.fleche-down'], {
         chapitre4.classList.add('bgMoveStop');
     }
     },
-).to('#chapitre4 .sol-1, #chapitre4 .sol-2', { scrub: 1,x: '-300px', duration: 3}, '-=5')
-.to('#chapitre4 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=3' )
+).to('#chapitre4 .text', {
+    duration: 8,
+    text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
+    ease: "none"
+}, '-=5').to('#chapitre4 .sol-1, #chapitre4 .sol-2', { scrub: 1,x: '-300px', duration: 3}, '-=8')
+.to('#chapitre4 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=8')
+.fromTo('#chapitre4', {opacity: 1, duration: 3}, {opacity: 0})
 .to('#chapitre5 .sprite.man', {
     x: '50vw',
     duration: 5,
@@ -88,9 +110,18 @@ gsap.timeline().from(['.fleche-down'], {
         chap5SpriteJ.classList.add('standJ');
         chapitre5.classList.add('bgMoveStop');
     }
-    },
-).to('#chapitre5 .sol-1, #chapitre4 .sol-2', { scrub: 1,x: '-300px', duration: 3}, '-=5')
-.to('#chapitre5 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=3' )
+    }, '-=5')
+.to('#chapitre5 .text', {
+    duration: 8,
+    text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
+    ease: "none"
+}, '-=5').to('#chapitre5 .sol-1, #chapitre4 .sol-2', { scrub: 1,x: '-300px', duration: 3}, '-=8')
+.to(['#chapitre5 .roche'], { scrub: 1,x: '-10vw', duration: 3, stagger: { each: 0.5}}, '-=8' )
+.to('#chapitre6 .text', {
+    duration: 8,
+    text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
+    ease: "none"
+}, '-=5')
 
 /*
 gsap.from(['.fleche-down'], {
@@ -157,19 +188,22 @@ const sprite = document.querySelectorAll('.sprite');
 
 if (all != null) {
     const body = document.querySelector('body');
+    let scroll;
+
     window.addEventListener('scroll', () => {
-        let y = window.scrollY;
         body.classList.add('is-scrolling');
-        setTimeout(removeClassIsScrolling, 100);
+        window.clearTimeout(scroll);
+        scroll = setTimeout(removeClassIsScrolling, 100);
       });
       
       function removeClassIsScrolling() {
           body.classList.remove('is-scrolling');
       }
-      
+      /*
       function addClassIsScrolling() {
           body.classList.add('is-scrolling');
       }
+      */
 }
 
 
