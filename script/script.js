@@ -21,7 +21,17 @@ gsap.timeline().from(['.fleche-down'], {
     stagger: {
         each: 0.5,
     },
-}).from(chap1SpriteStand, {
+}).to('#chapitre1', {
+    scrollTrigger: {
+        markers: true,
+        scrub: 1,
+        trigger: '#chapitre1',
+        start: 'top 0%',
+        end: '200% 5%',
+        pin: true,
+    }
+})
+.from(chap1SpriteStand, {
     x: '-80vw',
     duration: 5,
     onStart: () => {
@@ -41,6 +51,16 @@ gsap.timeline().from(['.fleche-down'], {
 }, '-=5')
 .fromTo('#chapitre1 .sol-1', {x: 0}, { scrub: 1,x: '-500px', duration: 3}, '-=8')
 .fromTo('#chapitre1 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 3}, '-=2.6' )
+.to('#chapitre2', {
+    scrollTrigger: {
+        markers: true,
+        scrub: 1,
+        trigger: '#chapitre2',
+        start: 'top 0%',
+        end: '200% 5%',
+        pin: true,
+    }
+})
 .fromTo('#chapitre2 .sprite.man', {x: 0}, {
     x: '30vmin',
     duration: 5,
@@ -72,7 +92,16 @@ gsap.timeline().from(['.fleche-down'], {
 .fromTo(['#chapitre3 .fromeBriser'], {y: 0}, { y: '50vh', duration: 5, stagger: { each: 2}}, '-=8')
 .fromTo('#chapitre3 .papier', {rotation: 0}, { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1}, '-=8');
 
-let timeline2 = gsap.timeline().fromTo('#chapitre4 .sprite.man', {x: 0},{
+let timeline2 = gsap.timeline().to('#chapitre4', {
+    scrollTrigger: {
+        markers: true,
+        scrub: 1,
+        trigger: '#chapitre4',
+        start: 'top 0%',
+        end: '200% 5%',
+        pin: true,
+    }
+}).fromTo('#chapitre4 .sprite.man', {x: 0},{
     x: '70vw',
     duration: 5,
     onStart: () => {
@@ -95,6 +124,16 @@ let timeline2 = gsap.timeline().fromTo('#chapitre4 .sprite.man', {x: 0},{
 }, '-=5').to('#chapitre4 .sol-1, #chapitre4 .sol-2', { scrub: 1,x: '-300px', duration: 3}, '-=8')
 .fromTo('#chapitre4 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 3}, '-=8')
 .fromTo('#chapitre4', {opacity: 1, duration: 3}, {opacity: 0}, '+=2')
+.to('#chapitre5', {
+    scrollTrigger: {
+        markers: true,
+        scrub: 1,
+        trigger: '#chapitre5',
+        start: 'top 0%',
+        end: '200% 5%',
+        pin: true,
+    }
+})
 .fromTo('#chapitre5 .sprite.man', {x: 0}, {
     x: '50vw',
     duration: 5,
