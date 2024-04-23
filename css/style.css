@@ -215,6 +215,7 @@ Chapitre 1
 
 #chapitre1 .sprite {
     bottom: 6vh;
+    right: 15vw;
     position: absolute;
     width: 25vw;
     height: 25vw;
@@ -659,18 +660,18 @@ Chapitre 4
     height: 70vh;
     width: 70vw;
     bottom: 0;
-    right: -30vw;
+    right: -40vw;
     z-index: 3;
 }
 
 #chapitre4 .roche.one {
     background-image: url(../media/img/img_elements_visuels/chap4-5/chap4-5_middle-rock-cave.webp);
     background-size: 100%;
-    background-position: 0 100%;
+    background-position: 0 0;
     height: 70vh;
     width: 90vw;
     bottom: 30vh;
-    right: -35vw;
+    right: -60vw;
     z-index: 1;
 }
 
@@ -681,7 +682,7 @@ Chapitre 4
     height: 90vh;
     width: 90vw;
     bottom: 0vh;
-    right: -30vw;
+    right: -40vw;
     z-index: 0;
 }
 

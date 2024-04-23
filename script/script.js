@@ -21,8 +21,8 @@ gsap.timeline().from(['.fleche-down'], {
     stagger: {
         each: 0.5,
     },
-}).to(chap1SpriteStand, {
-    x: '80vw',
+}).from(chap1SpriteStand, {
+    x: '-80vw',
     duration: 5,
     onStart: () => {
         bodyIndex.classList.add('is-scrolling')
@@ -34,14 +34,14 @@ gsap.timeline().from(['.fleche-down'], {
         chapitre1.classList.add('bgMoveStop');
     }
     }, '-=0.5'
-).to('#chapitre1 .text', {
+).to('#chapitre1 .text',{
     duration: 8,
     text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
     ease: "none"
 }, '-=5')
-.to('#chapitre1 .sol-1', { scrub: 1,x: '-500px', duration: 3}, '-=8')
-.to('#chapitre1 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=2.6' )
-.to('#chapitre2 .sprite.man', {
+.fromTo('#chapitre1 .sol-1', {x: 0}, { scrub: 1,x: '-500px', duration: 3}, '-=8')
+.fromTo('#chapitre1 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 3}, '-=2.6' )
+.fromTo('#chapitre2 .sprite.man', {x: 0}, {
     x: '30vmin',
     duration: 5,
     onStart: () => {
@@ -58,21 +58,21 @@ gsap.timeline().from(['.fleche-down'], {
     duration: 8,
     text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
     ease: "none"
-}, '-=5').to('#chapitre2 .sol-1', { scrub: 1,x: '-500px', duration: 3}, '-=8')
-.to('#chapitre2 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=3')
-.to('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', { scrub: 1,x: '-8vmin', duration: 3}, '-=3' )
-.to('.cercleBlanc', { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=5')
+}, '-=5').fromTo('#chapitre2 .sol-1', {x: 0}, { scrub: 1,x: '-500px', duration: 3}, '-=8')
+.fromTo('#chapitre2 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 3}, '-=3')
+.fromTo('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', {x: 0}, { scrub: 1,x: '-8vmin', duration: 3}, '-=3' )
+.fromTo('.cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=5')
 .to('#chapitre3 .text', {
     duration: 8,
     text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
     ease: "none"
 }, '-=5')
-.to('#chapitre3 .papier, #chapitre3 .sprite.man', { y: '380vh', duration: 10, ease:'ease.in'}, '-=8')
-.to('#chapitre3 .sprite.man', { rotation: 360, duration: 1.5, ease:'none', repeat: -1}, '-=12')
-.to(['#chapitre3 .fromeBriser'], { y: '50vh', duration: 5, stagger: { each: 2}})
-.to('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1}, '-=8');
+.fromTo('#chapitre3 .papier, #chapitre3 .sprite.man', {y: 0}, { y: '380vh', duration: 10, ease:'ease.in'}, '-=8')
+.fromTo('#chapitre3 .sprite.man',{}, { rotation: 360, duration: 2, ease:'none', repeat: -1}, '-=12')
+.fromTo(['#chapitre3 .fromeBriser'], {y: 0}, { y: '50vh', duration: 5, stagger: { each: 2}}, '-=8')
+.fromTo('#chapitre3 .papier', {rotation: 0}, { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1}, '-=8');
 
-let timeline2 = gsap.timeline().to('#chapitre4 .sprite.man', {
+let timeline2 = gsap.timeline().fromTo('#chapitre4 .sprite.man', {x: 0},{
     x: '70vw',
     duration: 5,
     onStart: () => {
@@ -93,9 +93,9 @@ let timeline2 = gsap.timeline().to('#chapitre4 .sprite.man', {
     text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
     ease: "none"
 }, '-=5').to('#chapitre4 .sol-1, #chapitre4 .sol-2', { scrub: 1,x: '-300px', duration: 3}, '-=8')
-.to('#chapitre4 .roche', { scrub: 1,x: '-10vw', duration: 3}, '-=8')
-.fromTo('#chapitre4', {opacity: 1, duration: 3}, {opacity: 0})
-.to('#chapitre5 .sprite.man', {
+.fromTo('#chapitre4 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 3}, '-=8')
+.fromTo('#chapitre4', {opacity: 1, duration: 3}, {opacity: 0}, '+=2')
+.fromTo('#chapitre5 .sprite.man', {x: 0}, {
     x: '50vw',
     duration: 5,
     onStart: () => {
@@ -116,7 +116,7 @@ let timeline2 = gsap.timeline().to('#chapitre4 .sprite.man', {
     text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
     ease: "none"
 }, '-=5').to('#chapitre5 .sol-1, #chapitre4 .sol-2', { scrub: 1,x: '-300px', duration: 3}, '-=8')
-.to(['#chapitre5 .roche'], { scrub: 1,x: '-10vw', duration: 3, stagger: { each: 0.5}}, '-=8' )
+.fromTo(['#chapitre5 .roche'], {x: 0}, { scrub: 1,x: '-10vw', duration: 3, stagger: { each: 0.5}}, '-=8')
 .to('#chapitre6 .text', {
     duration: 8,
     text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
