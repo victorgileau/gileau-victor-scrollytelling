@@ -473,6 +473,20 @@ Chapitre 3
     height: 500vh;
 }
 
+#chapitre3 .textBox.fixed {
+    position: fixed;
+    top: 10%;
+}
+
+#chapitre3 .svgPath {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10vh;
+}
+
 #chapitre3 .sprite.man {
     left: 0;
     right: 0;
