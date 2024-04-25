@@ -2,6 +2,7 @@
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(MotionPathPlugin)
 
 const chap1SpriteStand = document.querySelector('#chapitre1 .man');
 const chap2SpriteJ = document.querySelector('#chapitre2 .man');
@@ -122,16 +123,20 @@ let timeline2 = gsap.timeline({
     ease: "none"
 }, '-=5').fromTo('#chapitre2 .sol-1', {x: 0}, { scrub: 1,x: '-500px', duration: 20}, '-=68')
 .fromTo('#chapitre2 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 20}, '-=68')
-.fromTo('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', {x: 0}, { scrub: 1,x: '-8vmin', duration: 20}, '-=68');
+.fromTo('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', {x: 0}, { scrub: 1,x: '-8vmin', duration: 20}, '-=68')
+.fromTo('#chapitre2', {opacity: 1}, {opacity: 0, duration: 5, ease: 'ease.out'}, '+=1')
 //.fromTo('.cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');
 
 //Chapitre 3
 const textChap3 = document.querySelector('#chapitre3 .textBox');
 const chap1papierUn = document.querySelector('#chapitre3 .un');
 const pathOne = document.querySelector('#pathOne');
+const pathTwo = document.querySelector('#pathTwo');
+const pathTree = document.querySelector('#pathTree');
+const pathFour = document.querySelector('#pathFour');
 
 let tl = gsap.timeline().from('#chapitre3 .sprite.man',{ rotation: 360, duration: 2, ease:'none', repeat: -1})
-.from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1});
+.from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'ease', yoyo: true, repeat: -1});
 
 let timeline3 = gsap.timeline({
     duration: 8,
@@ -157,20 +162,50 @@ let timeline3 = gsap.timeline({
     }
 }).from('#chapitre3 .text', {
     duration: 20,
-    text: "♦♦♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦♦♦¿♦♦",
+    text: "♦♦♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦♦♦¿♦♦♦♦\n♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦♦♦¿♦♦",
     ease: "none",
-}).fromTo(['#chapitre3 .papier, #chapitre3 .sprite.man'], {y: 0}, { y: '400vh', duration: 60, ease:'none'})
-.fromTo(['#chapitre3 .fromeBriser'], {y: 0}, { y: '50vh', duration: 5, stagger: { each: 2}}, '-=60')
+}).fromTo('#chapitre3 .papier.cinq, #chapitre3 .papier.six, #chapitre3 .sprite.man', {y: 0}, { y: '400vh', duration: 90, ease:'none'}, '-=10')
+.fromTo(['#chapitre3 .fromeBriser'], {y: 0}, { y: '50vh', duration: 5, stagger: { each: 2}}, '-=80')
 .from('#chapitre3 .papier.un', {
-    duration: 60,
+    duration: 70,
     motionPath:{
       path: pathOne,
       align: pathOne,
       autoRotate: true,
       alignOrigin: [0.5, 0.5],
-      start: 0,
-      end: 0.8,
-    }}, '-=60')
+      start: 0.6,
+      end: 0,
+    }}, '-=80')
+.from('#chapitre3 .papier.deux', {
+    duration: 70,
+    motionPath:{
+        path: pathTwo,
+        align: pathTwo,
+        autoRotate: true,
+        alignOrigin: [0.5, 0.5],
+        start: 0.6,
+        end: 0,
+    }}, '-=80')
+.from('#chapitre3 .papier.troix', {
+    duration: 70,
+    motionPath:{
+        path: pathTree,
+        align: pathTree,
+        autoRotate: true,
+        alignOrigin: [0.5, 0.5],
+        start: 0.6,
+        end: 0,
+    }}, '-=80')
+.from('#chapitre3 .papier.quatre', {
+    duration: 70,
+    motionPath:{
+        path: pathFour,
+        align: pathFour,
+        autoRotate: true,
+        alignOrigin: [0.5, 0.5],
+        start: 0.6,
+        end: 0,
+    }}, '-=80')
 //.from('#chapitre3 .sprite.man',{ rotation: 360, duration: 2, ease:'none', repeat: -1})
 //.from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1})
 
@@ -263,11 +298,30 @@ let timeline5 = gsap.timeline({
 
 //Chapitre 6
 
-let timeline6 = gsap.timeline().to('#chapitre6 .text', {
+let timeline6 = gsap.timeline({
+    duration: 60,
+    scrollTrigger: {
+        markers: true,
+        scrub: true,
+        trigger: '#chapitre6',
+        start: 'top 50%',
+        end: '150% 0',
+        toggleActions: 'play pause reverse pause',
+    }
+}).from('#chapitre6', {
+    scrollTrigger: {
+        markers: true,
+        scrub: 1,
+        trigger: '#chapitre6',
+        start: 'top 0%',
+        end: '300% 5%',
+        pin: true,
+    }
+}).to('#chapitre6 .text', {
     duration: 8,
     text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
     ease: "none"
-}, '-=5')
+})
 
 /*
 gsap.from(['.fleche-down'], {

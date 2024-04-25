@@ -473,21 +473,34 @@ Chapitre 3
     height: 500vh;
 }
 
+#chapitre3 .chapitre3Bg {
+    width: 100%;
+    height: auto;
+}
+
+#chapitre3 .textBox {
+    text-align: center;
+}
+
 #chapitre3 .textBox.fixed {
     position: fixed;
     top: 10%;
 }
 
 #chapitre3 .svgPath {
-    width: 80%;
-    height: auto;
+    opacity: 0;
     position: absolute;
+    width: 100vw;
+    height: 400vh;
+    object-fit: cover;
+    object-position: 0 0;
     left: 0;
     right: 0;
     top: 10vh;
 }
 
 #chapitre3 .sprite.man {
+    top: 0;
     left: 0;
     right: 0;
     margin: auto;
@@ -601,6 +614,12 @@ Chapitre 3
 #chapitre3 .line.right {
     top: 3vh;
     right: 5vw;
+}
+
+@media screen and (max-width: 1000px) {
+    #chapitre3 .svgPath {
+        width: 20%;
+    }
 }
 
 /*
