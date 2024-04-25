@@ -51,9 +51,11 @@ let timeline1 = gsap.timeline({
         toggleActions: 'play pause reverse pause',
     }
 }).to('#chapitre1', {
+    backgroundPosition: "-10% 0",
+    ease: "ease.out",
     scrollTrigger: {
         markers: true,
-        scrub: 1,
+        scrub: true,
         trigger: '#chapitre1',
         start: 'top 0%',
         end: '180% 5%',
@@ -62,7 +64,7 @@ let timeline1 = gsap.timeline({
 })
 .from(chap1SpriteStand, {
     x: '-80vw',
-    duration: 5,
+    duration: 40,
     onStart: () => {
         chap1SpriteStand.classList.remove('standJ');
         chap1SpriteStand.classList.add('walkJ');
@@ -71,14 +73,14 @@ let timeline1 = gsap.timeline({
     onComplete: () => {
         chapitre1.classList.add('bgMoveStop');
     }
-    }, '-=0.5'
+    }, '-=40.5'
 ).to('#chapitre1 .text',{
     duration: 8,
     text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
     ease: "none"
-}, '-=5')
-.fromTo('#chapitre1 .sol-1', {x: 0}, { scrub: 1,x: '-500px', duration: 3}, '-=8')
-.fromTo('#chapitre1 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 3}, '-=8');
+}, '-=45')
+.fromTo('#chapitre1 .sol-1', {x: 0}, { scrub: 1,x: '-50vw', duration: 60}, '-=48')
+.fromTo('#chapitre1 .roche', {x: 0}, { scrub: 1,x: '-14vw', duration: 60}, '-=48');
 
 //Chapitre 2
 
@@ -95,9 +97,12 @@ let timeline2 = gsap.timeline({
         toggleActions: 'play pause reverse pause',
     }
 }).to('#chapitre2', {
+    backgroundPosition: "-10% 0",
+    ease: "none",
+    duration: 60,
     scrollTrigger: {
         markers: true,
-        scrub: 1,
+        scrub: true,
         trigger: '#chapitre2',
         start: 'top 0%',
         end: '200% 5%',
@@ -106,7 +111,7 @@ let timeline2 = gsap.timeline({
 })
 .fromTo('#chapitre2 .sprite.man', {x: 0}, {
     x: '30vmin',
-    duration: 60,
+    duration: 68,
     onStart: () => {
         chap2SpriteJ.classList.add('walkJ');
         chapitre2.classList.add('bgMove');
@@ -118,13 +123,13 @@ let timeline2 = gsap.timeline({
     }
     }, '-=60.5'
 ).to('#chapitre2 .text', {
-    duration: 20,
+    duration: 10,
     text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
     ease: "none"
-}, '-=5').fromTo('#chapitre2 .sol-1', {x: 0}, { scrub: 1,x: '-500px', duration: 20}, '-=68')
-.fromTo('#chapitre2 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 20}, '-=68')
+}, '-=5').fromTo('#chapitre2 .sol-1', {x: 0}, { scrub: 1,x: '-500px', duration: 60}, '-=68')
+.fromTo('#chapitre2 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 60}, '-=68')
 .fromTo('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', {x: 0}, { scrub: 1,x: '-8vmin', duration: 20}, '-=68')
-.fromTo('#chapitre2', {opacity: 1}, {opacity: 0, duration: 5, ease: 'ease.out'}, '+=1')
+.fromTo('#chapitre2', {opacity: 1}, {opacity: 0, duration: 5, ease: 'ease.out'}, '+=5')
 //.fromTo('.cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');
 
 //Chapitre 3
@@ -223,6 +228,8 @@ let timeline4 = gsap.timeline({
         toggleActions: 'play pause reverse pause',
     }
 }).from('#chapitre4', {
+    backgroundPosition: "-10% 0",
+    ease: "ease.out",
     scrollTrigger: {
         markers: true,
         scrub: 1,
@@ -231,7 +238,7 @@ let timeline4 = gsap.timeline({
         end: '200% 5%',
         pin: true,
     }
-}).fromTo('#chapitre4 .sprite.man', {x: 0},{
+}).fromTo('#chapitre4 .sprite.man', {x: '-70vw'},{
     x: '70vw',
     duration: 60,
     onStart: () => {
@@ -243,14 +250,14 @@ let timeline4 = gsap.timeline({
         chap4SpriteJ.classList.add('standJ');
         chapitre4.classList.add('bgMoveStop');
     }
-    }
+    }, '-=5'
 ).to('#chapitre4 .text', {
     duration: 8,
     text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
     ease: "none"
 }, '-=65')
-.fromTo('#chapitre4 .sol-1, #chapitre4 .sol-2', {x: 0}, { scrub: 1,x: '-300px', duration: 20}, '-=50')
-.fromTo('#chapitre4 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 15}, '-=50')
+.fromTo('#chapitre4 .sol-1, #chapitre4 .sol-2', {x: 0}, { scrub: 1,x: '-50vw', duration: 60}, '-=50')
+.fromTo('#chapitre4 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 60}, '-=50')
 .fromTo('#chapitre4',{opacity: 1}, {opacity: 0, duration: 10, ease: 'ease.out'}, '+=5');
 
 //Chapitre 5
