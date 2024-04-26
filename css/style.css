@@ -853,6 +853,15 @@ Chapitre 6
     overflow: hidden;
 }
 
+#chapitre6 .textBox {
+    top: 10vh;
+}
+
+#chapitre6 .textBox .text {
+    font-size: 5vw;
+    text-align: center;
+}
+
 #chapitre6 .perso {
     position: absolute;
     background-image: url(../media/img/img_elements_visuels/perso_big.webp);
@@ -863,9 +872,10 @@ Chapitre 6
     width: 40vmin;
     filter: drop-shadow(0 0 3em var(--blanc)) blur(1.5px);
     bottom: -20vh;
+    z-index: 1;
 }
 
-#chapitre6 .ball {
+#chapitre6 .ball, #chapitre5 .ball {
     position: absolute;
     background-image: url(../media/img/img_elements_visuels/chap5-6/chap5-6_ball-v1.webp);
     background-size: 100%;
@@ -876,28 +886,83 @@ Chapitre 6
     left: 10vw;
 }
 
-#chapitre6 .star {
+#chapitre6 .ball.one, #chapitre5 .ball.one {
+    left: 30vw;
+    top: 40vh;
+}
+
+#chapitre6 .ball.two, #chapitre5 .ball.two {
+    left: 80vw;
+    top: 10vh;
+}
+
+#chapitre6 .ball.tree, #chapitre5 .ball.tree {
+    left: 50vw;
+    top: 60vh;
+}
+
+#chapitre6 .ball.four, #chapitre5 .ball.four {
+    left: 5vw;
+    top: 15vh;
+}
+
+#chapitre6 .star, #chapitre5 .star {
     position: absolute;
     background-image: url(../media/img/img_elements_visuels/chap5-6/chap5-6_star-v1.webp);
     background-size: 100%;
     background-position: bottom;
     background-repeat: no-repeat;
-    opacity: 0.6;
+    opacity: 1;
     width: 8vw;
     height: 16vw;
     left: 25vw;
 }
 
-#chapitre6 .effect {
+#chapitre6 .star.one, #chapitre5 .star.one {
+    left: 25vw;
+    top: 60vh;
+}
+
+#chapitre6 .star.two, #chapitre5 .star.two {
+    left: 60vw;
+    top: 45vh;
+}
+
+#chapitre6 .star.tree, #chapitre5 .star.tree {
+    left: 90vw;
+    top: 55vh;
+}
+
+#chapitre6 .star.four, #chapitre5 .star.four {
+    left: 15vw;
+    top: 25vh;
+}
+
+#chapitre6 .effect, #chapitre5 .effect {
     position: absolute;
     background-image: url(../media/img/img_elements_visuels/chap5-6/chap5-6_effet-back-chap6.webp);
     background-size: 100%;
     background-position: bottom;
     background-repeat: no-repeat;
-    opacity: 0.6;
-    width: 10vw;
-    height: 10vw;
+    opacity: 0.8;
+    width: 20vw;
+    height: 20vw;
     left: 40vw;
+}
+
+#chapitre6 .effect.one, #chapitre5 .effect.one {
+    left: 35vw;
+    top: 25vh;
+}
+
+#chapitre6 .effect.two, #chapitre5 .effect.two {
+    left: 60vw;
+    top: 55vh;
+}
+
+#chapitre6 .effect.tree, #chapitre5 .effect.tree {
+    left: 70vw;
+    top: 20vh;
 }
 
 /*

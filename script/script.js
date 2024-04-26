@@ -76,7 +76,10 @@ let timeline1 = gsap.timeline({
     }, '-=40.5'
 ).to('#chapitre1 .text',{
     duration: 8,
-    text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
+    text: {
+        speed: 1,
+        value: "Je m\'avance dans ce rêve qui m\'est inconnu.",
+    },
     ease: "none"
 }, '-=45')
 .fromTo('#chapitre1 .sol-1', {x: 0}, { scrub: 1,x: '-50vw', duration: 60}, '-=48')
@@ -124,7 +127,7 @@ let timeline2 = gsap.timeline({
     }, '-=60.5'
 ).to('#chapitre2 .text', {
     duration: 10,
-    text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
+    text: "Je vois un carpeau de lumière qui m\'emporte plus loin dans ce rêve des plus intrigant.",
     ease: "none"
 }, '-=5').fromTo('#chapitre2 .sol-1', {x: 0}, { scrub: 1,x: '-500px', duration: 60}, '-=68')
 .fromTo('#chapitre2 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 60}, '-=68')
@@ -167,7 +170,10 @@ let timeline3 = gsap.timeline({
     }
 }).from('#chapitre3 .text', {
     duration: 20,
-    text: "♦♦♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦♦♦¿♦♦♦♦\n♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦♦♦¿♦♦",
+    text: {
+        speed: 0.3,
+        value: "♦♦♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦♦♦¿♦♦♦♦\n♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦♦♦¿♦♦",
+    },
     ease: "none",
 }).fromTo('#chapitre3 .papier.cinq, #chapitre3 .papier.six, #chapitre3 .sprite.man', {y: 0}, { y: '400vh', duration: 90, ease:'none'}, '-=10')
 .fromTo(['#chapitre3 .fromeBriser'], {y: 0}, { y: '50vh', duration: 5, stagger: { each: 2}}, '-=80')
@@ -253,7 +259,10 @@ let timeline4 = gsap.timeline({
     }, '-=5'
 ).to('#chapitre4 .text', {
     duration: 8,
-    text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
+    text: {
+        value: "Je touche le fond. Je vois une entrée. Je rentre.",
+        speed: 0.5,
+    },
     ease: "none"
 }, '-=65')
 .fromTo('#chapitre4 .sol-1, #chapitre4 .sol-2', {x: 0}, { scrub: 1,x: '-50vw', duration: 60}, '-=50')
@@ -298,18 +307,26 @@ let timeline5 = gsap.timeline({
     },)
 .to('#chapitre5 .text', {
     duration: 20,
-    text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
+    text: {
+        value: "Je rentre dans une grotte émerveillant rempli d\'étoiles.",
+        speed: 0.5,
+    },
     ease: "none"
 }, '-=65').to('#chapitre5 .sol-1, #chapitre4 .sol-2', { scrub: 1,x: '-300px', duration: 10}, '-=55')
 .fromTo(['#chapitre5 .roche'], {x: 0}, { scrub: 1,x: '-10vw', duration: 10, stagger: { each: 0.5}}, '-=55');
 
+
 //Chapitre 6
+
+let effectObjectGrotteChap5Chap6 = gsap.timeline()
+.fromTo(['#chapitre6 .object, #chapitre5 .object'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.5}}, '-=60')
+.fromTo(['#chapitre6 .effect, #chapitre5 .effect'], {scale: 1}, {scale: 1.5, repeat: -1, yoyo: true, duration: 3});
 
 let timeline6 = gsap.timeline({
     duration: 60,
     scrollTrigger: {
         markers: true,
-        scrub: true,
+        scrub: 1,
         trigger: '#chapitre6',
         start: 'top 50%',
         end: '150% 0',
@@ -325,10 +342,14 @@ let timeline6 = gsap.timeline({
         pin: true,
     }
 }).to('#chapitre6 .text', {
-    duration: 8,
-    text: "Fils du fortuné constructeur automobile Adolphe Clément-Bayard, ce passionné d'automobiles est l'un des pionniers de la compétition automobile. Il commence sa carrière de pilote en 1904, aidé par son père.",
+    duration: 20,
+    text: {
+        value: "J\'admire les étoiles.",
+        speed: 1,
+    },
     ease: "none"
-})
+});
+
 
 /*
 gsap.from(['.fleche-down'], {
