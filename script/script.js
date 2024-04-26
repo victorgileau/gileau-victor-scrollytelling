@@ -87,7 +87,7 @@ let timeline1 = gsap.timeline({
 
 //Chapitre 2
 
-let tl2 = gsap.timeline().fromTo('.cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');
+const tl2 = gsap.timeline().fromTo('.cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');
 
 let timeline2 = gsap.timeline({
     duration: 60,
@@ -319,7 +319,7 @@ let timeline5 = gsap.timeline({
 //Chapitre 6
 
 let effectObjectGrotteChap5Chap6 = gsap.timeline()
-.fromTo(['#chapitre6 .object, #chapitre5 .object'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.5}}, '-=60')
+.fromTo(['#chapitre6 .object, #chapitre5 .object'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60')
 .fromTo(['#chapitre6 .effect, #chapitre5 .effect'], {scale: 1}, {scale: 1.5, repeat: -1, yoyo: true, duration: 3});
 
 let timeline6 = gsap.timeline({

@@ -755,6 +755,11 @@ Chapitre 5
     overflow: hidden;
 }
 
+#chapitre5 .textBox .text {
+    text-align: center;
+    text-shadow: 0 0 5vw var(--blanc);
+}
+
 #chapitre5.bgMove {
     animation-play-state: running;
     animation: chap5BGMove;
@@ -860,6 +865,7 @@ Chapitre 6
 #chapitre6 .textBox .text {
     font-size: 5vw;
     text-align: center;
+    text-shadow: 0 0 5vw var(--blanc);
 }
 
 #chapitre6 .perso {
@@ -916,6 +922,7 @@ Chapitre 6
     width: 8vw;
     height: 16vw;
     left: 25vw;
+    filter: drop-shadow(0 0 2vw var(--blanc));
 }
 
 #chapitre6 .star.one, #chapitre5 .star.one {
@@ -948,6 +955,7 @@ Chapitre 6
     width: 20vw;
     height: 20vw;
     left: 40vw;
+    filter: drop-shadow(0 0 5vw var(--blanc));
 }
 
 #chapitre6 .effect.one, #chapitre5 .effect.one {
