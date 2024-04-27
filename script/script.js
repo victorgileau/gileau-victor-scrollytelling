@@ -348,9 +348,6 @@ let timeline6 = gsap.timeline({
         onEnter: () => {
             effectObjectGrotteChap6.play();
         },
-        onLeave: () => {
-            effectObjectGrotteChap6.pause();
-        }
     }
 }).from('#chapitre6', {
     scrollTrigger: {
