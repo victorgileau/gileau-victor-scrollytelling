@@ -271,6 +271,12 @@ let timeline4 = gsap.timeline({
 
 //Chapitre 5
 
+const effectObjectGrotteChap5 = gsap.timeline()
+.fromTo(['#chapitre5 .object'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60')
+.fromTo(['#chapitre5 .effect'], {scale: 1}, {scale: 1.5, repeat: -1, yoyo: true, duration: 3});
+
+effectObjectGrotteChap5.pause();
+
 let timeline5 = gsap.timeline({
     duration: 60,
     scrollTrigger: {
@@ -280,6 +286,12 @@ let timeline5 = gsap.timeline({
         start: 'top 50%',
         end: '150% 0',
         toggleActions: 'play pause reverse pause',
+        onEnter: () => {
+            effectObjectGrotteChap5.play();
+        },
+        onLeave: () => {
+            effectObjectGrotteChap5.pause();
+        }
     }
 }).from('#chapitre5', {
     scrollTrigger: {
@@ -318,9 +330,11 @@ let timeline5 = gsap.timeline({
 
 //Chapitre 6
 
-let effectObjectGrotteChap5Chap6 = gsap.timeline()
-.fromTo(['#chapitre6 .object, #chapitre5 .object'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60')
-.fromTo(['#chapitre6 .effect, #chapitre5 .effect'], {scale: 1}, {scale: 1.5, repeat: -1, yoyo: true, duration: 3});
+const effectObjectGrotteChap6 = gsap.timeline()
+.fromTo(['#chapitre6 .object'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60')
+.fromTo(['#chapitre6 .effect'], {scale: 1}, {scale: 1.5, repeat: -1, yoyo: true, duration: 3});
+
+effectObjectGrotteChap6.pause();
 
 let timeline6 = gsap.timeline({
     duration: 60,
@@ -331,6 +345,12 @@ let timeline6 = gsap.timeline({
         start: 'top 50%',
         end: '150% 0',
         toggleActions: 'play pause reverse pause',
+        onEnter: () => {
+            effectObjectGrotteChap6.play();
+        },
+        onLeave: () => {
+            effectObjectGrotteChap6.pause();
+        }
     }
 }).from('#chapitre6', {
     scrollTrigger: {

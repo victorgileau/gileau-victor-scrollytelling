@@ -12,9 +12,8 @@
         <h1>Le rêve de J</h1>
 
         <p class="description">
-            J et parcours un monde de rêve fait de papier et de vecteur. Parcoure un grand voyage dans le quelle
-            il interagie avec la vie de ce monde mystérieux par la foi aimable et terrifiant.
-            Il finit par arriver à son lit pour se réveiller de ce rêve mystérieux.
+            J se trouve dans un monde de rêve fait de papier et de vecteur. Il commence ce voyage.
+            Il interagit avec la vie de ce monde mystérieux, aimable et terrifiant.
         </p>
 
         <div class="down">
@@ -32,18 +31,24 @@
     <main>
         <section class="section" id="chapitre1">
             <ul class="technique-gsap">
-                <li>Personnage sprite : deplacement de x(0) à x(-80vw)</li> 
-                <li>Sol 1 : de x(0) à x(-50vw)</li>
-                <li>Tout les roches : de x(0) à x(-14vw)</li>
-                <li>Text : passer d'un text à l'autre</li>
                 <li>scrollTrigger 
                     <ul> 
-                        <li>trigger= #chapitre1</li> 
+                        <li>trigger= #chapitre1</li>
                         <li>background-position : x(-10%)</li>
-                        <li>pin</li>
                         <li>toggleActions: 'play pause reverse pause'</li>
+                        <li>Personnage sprite : deplacement de x(0) à x(-80vw)</li>
+                        <li>Text : passer d'un text à l'autre</li>
+                        <li>Sol 1 : de x(0) à x(-50vw)</li>
+                        <li>Tout les roches : de x(0) à x(-14vw)</li>
                     </ul> 
                 </li> 
+                <li>scrollTrigger 
+                    <ul> 
+                        <li>trigger= #chapitre1</li>
+                        <li>background-position : x(-10%)</li>
+                        <li>pin</li>
+                    </ul> 
+                </li>
             </ul>
             <div class="textBox">
                 <h1 class="text">
@@ -60,22 +65,27 @@
             <div class="sol-2"></div>
         </section>
         <section class="section black" id="chapitre2">
-            <ul class="technique-gsap"> 
-                <li>Personnage sprite : deplacement de x(0) à x(30vmin)</li> 
-                <li>Sol 1 : de x(0) à x(-500px)</li>
-                <li>Tout les roches : de x(0) à x(-10vw)</li>
-                <li>Text : passer d'un text à l'autre</li>
+            <ul class="technique-gsap">
                 <li>Cerle : scale(1) à scale(1.4) répétition</li>
-                <li>Crapeau et cerle : de x(0) à x(-8vmin)</li>
-                <li>Fade : de opacity(1) à opacity(0)</li>
                 <li>scrollTrigger 
                     <ul> 
                         <li>trigger= #chapitre2</li> 
+                        <li>toggleActions: 'play pause reverse pause'</li>
+                        <li>Personnage sprite : deplacement de x(0) à x(30vmin)</li> 
+                        <li>Text : passer d'un text à l'autre</li>
+                        <li>Sol 1 : de x(0) à x(-500px)</li>
+                        <li>Tout les roches : de x(0) à x(-10vw)</li>
+                        <li>Crapeau et cerle : de x(0) à x(-8vmin)</li>
+                        <li>Chapitre2 : de opacity(1) à opacity(0)</li>
+                    </ul> 
+                </li>
+                <li>scrollTrigger 
+                    <ul> 
+                        <li>trigger= #chapitre2</li>
                         <li>background-position : x(-10%)</li>
                         <li>pin</li>
-                        <li>toggleActions: 'play pause reverse pause'</li>
                     </ul> 
-                </li> 
+                </li>
             </ul>
             <div class="textBox">
                 <h1 class="text">
@@ -97,14 +107,26 @@
         <section class="section black" id="chapitre3">
             <img class="chapitre3Bg" src="./media/img/img_arriere_plan/bg-chap3.webp" alt="bg-chap3.webp">
             <ul class="technique-gsap"> 
-                <li>...</li> 
-                <li>...</li> 
+                <li>Personnage sprite : rotation(360) répétition</li>
+                <li>Papiers : rotation(360) répétition et yoyo</li> 
+                <li>scrollTrigger 
+                    <ul>
+                        <li>trigger= #chapitre3</li>
+                        <li>Text : passer d'un text à l'autre et 'fixed' au chapitre3</li>
+                        <li>Papier cinq, Papier six et personnage sprite : y(0) à y(400vh)</li>
+                        <li>Formes brisées : y(0) à y(50vh) avec stagger(each(2))</li>
+                        <li>Papier un : Motion Path</li>
+                        <li>Papier deux : Motion Path</li>
+                        <li>Papier troix : Motion Path</li>
+                        <li>Papier quatre : Motion Path</li>
+                    </ul>
+                </li>
                 <li>scrollTrigger 
                     <ul> 
-                        <li>trigger=</li> 
-                        <li>...</li> 
+                        <li>trigger= #chapitre3</li> 
+                        <li>pin</li>
                     </ul> 
-                </li> 
+                </li>
             </ul>
             <div class="textBox">
                 <h1 class="text">
@@ -200,14 +222,24 @@
         </section>
         <section class="section black" id="chapitre4">
             <ul class="technique-gsap"> 
-                <li>...</li> 
-                <li>...</li> 
                 <li>scrollTrigger 
                     <ul> 
-                        <li>trigger=</li> 
-                        <li>...</li> 
+                        <li>trigger= #chapitre4</li> 
+                        <li>toggleActions: 'play pause reverse pause'</li>
+                        <li>Personnage sprite : x(-70vw) à x(70vw)</li>
+                        <li>Text : passer d'un text à l'autre</li>
+                        <li>Sol 1 et Sol 2 : x(0) à x(-50vw)</li>
+                        <li>Tout les roches : x(0) à s(-10vw)</li>
+                        <li>Chapitre4 : opacité(1) à opacité(0)</li>
                     </ul> 
-                </li> 
+                </li>
+                <li>scrollTrigger 
+                    <ul> 
+                        <li>trigger= #chapitre4</li> 
+                        <li>background-position : x(-10%)</li>
+                        <li>pin</li>
+                    </ul> 
+                </li>
             </ul>
             <div class="textBox">
                 <h1 class="text">
@@ -226,14 +258,28 @@
             <div class="sol-2"></div>
         </section>
         <section class="section black" id="chapitre5">
-            <ul class="technique-gsap"> 
-                <li>...</li>
-                <li>...</li>
+            <ul class="technique-gsap">
+                <li>Animation Chapitre 5 : Étoiles, Boulles et Effects : y(0) opacité(0.3) à y(10vh) opacité(1) répétition et yoyo</li>
+                <li>Animation Chapitre 5 : Effects : scale(1) à scale(1.5) répétition et yoyo</li>
                 <li>scrollTrigger
                     <ul>
-                        <li>trigger=</li>
-                        <li>...</li>
+                        <li>trigger= chapitre5</li>
+                        <ul>
+                            <li>onEnter : Animation Chapitre 5 activer</li>
+                            <li>onLeave : Animation Chapitre 5 sur pause</li>
+                        </ul>
+                        <li>Chapitre5 : opacité(0) à opacité(1)</li>
+                        <li>Personnage sprite : x(0) à x(50vw)</li>
+                        <li>Text : passer d'un text à l'autre</li>
+                        <li>Sol 1 et Sol 2 : x(0) à x(-300px)</li>
+                        <li>Tout les roches : x(0) à s(-10vw) stagger(each(0.5))</li>
                     </ul>
+                </li>
+                <li>scrollTrigger 
+                    <ul> 
+                        <li>trigger= #chapitre5</li>
+                        <li>pin</li>
+                    </ul> 
                 </li> 
             </ul>
             <div class="textBox">
@@ -264,13 +310,23 @@
         </section>
         <section class="section black" id="chapitre6">
             <ul class="technique-gsap"> 
-                <li>...</li>
-                <li>...</li>
+                <li>Animation Chapitre 6 : Étoiles, Boulles et Effects : y(0) opacité(0.3) à y(10vh) opacité(1) répétition et yoyo</li>
+                <li>Animation Chapitre 6 : Effects : scale(1) à scale(1.5) répétition et yoyo</li>
                 <li>scrollTrigger
                     <ul>
-                        <li>trigger=</li>
-                        <li>...</li>
+                        <li>trigger= chapitre6</li>
+                        <ul>
+                            <li>onEnter : Animation Chapitre 6 activer</li>
+                            <li>onLeave : Animation Chapitre 6 sur pause</li>
+                        </ul>
+                        <li>Text : passer d'un text à l'autre</li>
                     </ul>
+                </li>
+                <li>scrollTrigger 
+                    <ul> 
+                        <li>trigger= #chapitre6</li>
+                        <li>pin</li>
+                    </ul> 
                 </li>
             </ul>
             <div class="textBox">

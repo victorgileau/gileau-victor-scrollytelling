@@ -88,7 +88,7 @@ Header
 }
 
 .header p {
-    width: 100%;
+    width: 80%;
     text-align: center;
     color: var(--blanc);
     font-family: 'Grunge';
@@ -971,6 +971,13 @@ Chapitre 6
 #chapitre6 .effect.tree, #chapitre5 .effect.tree {
     left: 70vw;
     top: 20vh;
+}
+
+@media screen and (max-width: 700px) {
+    #chapitre6 .perso {
+        height: 100%;
+        width: 50vmin;
+    }
 }
 
 /*
