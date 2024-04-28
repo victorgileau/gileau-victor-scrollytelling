@@ -83,7 +83,7 @@ let timeline1 = gsap.timeline({
     ease: "none"
 }, '-=45')
 .fromTo('#chapitre1 .sol-1', {x: 0}, { scrub: 1,x: '-50vw', duration: 60}, '-=48')
-.fromTo('#chapitre1 .roche', {x: 0}, { scrub: 1,x: '-14vw', duration: 60}, '-=48');
+.fromTo('#chapitre1 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 60}, '-=48');
 
 //Chapitre 2
 
