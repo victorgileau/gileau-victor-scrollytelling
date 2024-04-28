@@ -177,10 +177,21 @@ section {
 
 .black .textBox .text {
     color: var(--blanc);
-    font-size: 3vmin;
     text-align: left;
     text-shadow: 0 0 10px var(--noir);
     letter-spacing: 0.1em;
+}
+
+@media screen and (max-width: 1000px) {
+    .textBox .text {
+        font-size: 6vmin;
+        line-height: 6vmin;
+    }
+
+    #chapitre6 .textBox .text {
+        font-size: 10vw;
+        line-height: 8vmin;
+    }
 }
 
 /*
