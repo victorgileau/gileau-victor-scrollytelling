@@ -175,7 +175,7 @@ let timeline3 = gsap.timeline({
         value: "♦♦♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦♦♦¿♦♦♦♦\n♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦¿♦♦♦♦♦♦♦♦♦♦♦¿♦♦",
     },
     ease: "none",
-}).fromTo('#chapitre3 .papier.cinq, #chapitre3 .papier.six, #chapitre3 .sprite.man', {y: 0}, { y: '400vh', duration: 90, ease:'none'}, '-=10')
+}, '-=8').fromTo('#chapitre3 .papier.cinq, #chapitre3 .papier.six, #chapitre3 .sprite.man', {y: 0}, { y: '400vh', duration: 90, ease:'none'}, '-=8')
 .fromTo(['#chapitre3 .fromeBriser'], {y: 0}, { y: '50vh', duration: 5, stagger: { each: 2}}, '-=80')
 .from('#chapitre3 .papier.un', {
     duration: 70,
