@@ -1124,7 +1124,7 @@ SpriteSheet
 
 @keyframes spriteMoveFrogResponsive {
     0% {
-        background-position: 0px 0;
+        background-position: 0 0;
     }
     100% {
         background-position: 0 -600%;
@@ -1142,4 +1142,3 @@ SpriteSheet
         width: 50vw;
     }
 }
-
