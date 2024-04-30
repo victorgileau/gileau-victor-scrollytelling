@@ -1,4 +1,4 @@
-//Index
+//-------------Index-------------
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
@@ -41,7 +41,7 @@ if (techniqueGsap != null) {
     }
 }
 
-//Chapitre 1
+//-------------Chapitre 1---------------
 
 let timeline1 = gsap.timeline({
     duration: 40,
@@ -89,9 +89,9 @@ let timeline1 = gsap.timeline({
 .fromTo('#chapitre1 .roche.tow, #chapitre1 .roche.tree', {x: 0}, {x: '-10vw', duration: 60}, '-=48')
 .fromTo('#chapitre1 .roche.one', {x: 0}, {x: '-15vw', duration: 60}, '-=52');
 
-//Chapitre 2
+//-----------------Chapitre 2----------------
 
-const tl2 = gsap.timeline().fromTo('.cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');
+const tl2 = gsap.timeline().fromTo('#chapitre2 .cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');
 
 let timeline2 = gsap.timeline({
     duration: 60,
@@ -139,7 +139,8 @@ let timeline2 = gsap.timeline({
 .fromTo('#chapitre2', {opacity: 1}, {opacity: 0, duration: 5, ease: 'ease.out'}, '+=5')
 //.fromTo('.cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');
 
-//Chapitre 3
+//------------Chapitre 3----------------
+
 const textChap3 = document.querySelector('#chapitre3 .textBox');
 const chap1papierUn = document.querySelector('#chapitre3 .un');
 const pathOne = document.querySelector('#pathOne');
@@ -181,7 +182,6 @@ let timeline3 = gsap.timeline({
         },
         onEnterBack: () => {
             textChap3.classList.remove('fixed');
-            
         }
     }
 }).from('#chapitre3 .text', {
@@ -242,7 +242,7 @@ let timeline3 = gsap.timeline({
 //.from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1})
 
 
-//Chapitre 4
+//---------------Chapitre 4-----------------
 
 let timeline4 = gsap.timeline({
     duration: 60,
@@ -253,6 +253,9 @@ let timeline4 = gsap.timeline({
         start: 'top 50%',
         end: '150% 0',
         toggleActions: 'play pause reverse pause',
+        onEnter: () => {
+            textChap3.classList.remove('fixed');
+        },
     }
 }).from('#chapitre4', {
     backgroundPosition: "-10% 0",
@@ -290,7 +293,7 @@ let timeline4 = gsap.timeline({
 .fromTo('#chapitre4 .roche', {x: 0}, {x: '-10vw', duration: 60}, '-=50')
 .fromTo('#chapitre4',{opacity: 1}, {opacity: 0, duration: 10, ease: 'ease.out'}, '+=5');
 
-//Chapitre 5
+//-----------------Chapitre 5-----------------
 
 const effectObjectGrotteChap5 = gsap.timeline()
 .fromTo(['#chapitre5 .object'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60');
@@ -308,6 +311,7 @@ let timeline5 = gsap.timeline({
         toggleActions: 'play pause reverse pause',
         onEnter: () => {
             effectObjectGrotteChap5.play();
+            textChap3.classList.remove('fixed');
         },
         onLeave: () => {
             effectObjectGrotteChap5.pause();
@@ -348,7 +352,7 @@ let timeline5 = gsap.timeline({
 .fromTo(['#chapitre5 .roche'], {x: 0}, {x: '-10vw', duration: 60, stagger: { each: 0.5}}, '-=55');
 
 
-//Chapitre 6
+//-----------------Chapitre 6----------------
 
 const effectObjectGrotteChap6 = gsap.timeline()
 .fromTo(['#chapitre6 .object, #chapitre6 .morphSvg'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60')
@@ -367,6 +371,7 @@ let timeline6 = gsap.timeline({
         toggleActions: 'play pause reverse pause',
         onEnter: () => {
             effectObjectGrotteChap6.play();
+            textChap3.classList.remove('fixed');
         },
     }
 }).from('#chapitre6', {
@@ -395,6 +400,35 @@ let timeline6 = gsap.timeline({
       shapeIndex: 6,
     }
 }, '-=25');
+
+//--------------Chapitre 7----------------
+
+const tl3 = gsap.timeline().fromTo('#chapitre7 .cercleBlanc', {scale: 0.6, opacity: 0.6}, { scale: 1,  opacity: 1, repeat: -1, duration: 10,  yoyo: true, ease: 'power1'});
+
+let timeline7 = gsap.timeline({
+    scrollTrigger: {
+        markers: {
+            startColor: 'white',
+            endColor: 'purple',
+        },
+        trigger: '#chapitre7',
+        start: '25% 78%',
+        end: '75% 75%',
+        toggleActions: 'play none reverse reset',
+        onEnter: () => {
+            textChap3.classList.remove('fixed');
+        },
+    }
+}).to('#chapitre7 .text', {
+    duration: 60,
+    color:"white",
+    text: {
+        value: "Rêve et rêve encore...",
+        speed: 0.5,
+        newClass: "fontNormal",
+        ease: "power1.inOut"
+    },
+})
 
 
 /*
@@ -455,7 +489,7 @@ tl.to(['.sprite'], {
 });
 */
 
-//SrpiteSheet
+//------------SrpiteSheet-------------
 
 const all = document.querySelector('.all');
 const sprite = document.querySelectorAll('.sprite');

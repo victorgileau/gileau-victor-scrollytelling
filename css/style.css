@@ -357,7 +357,7 @@ Chapitre 2
     z-index: 2;
 }
 
-#chapitre2 .cercleBlanc {
+#chapitre2 .cercleBlanc, #chapitre7 .cercleBlanc {
     position: absolute;
     background-image: url(../media/img/img_elements_visuels/chap1-2/chap2_cercle_frog.webp);
     background-size: 100%;
@@ -1027,6 +1027,47 @@ Chapitre 6
         top: 60vh;
         left: 55vw;
         z-index: 1;
+    }
+}
+
+/*
+Chapitre 7
+*/
+
+#chapitre7 {
+    overflow: hidden;
+}
+
+#chapitre7 .cercleBlanc {
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: scale(0.5);
+    top: 10vh;
+    bottom: auto;
+}
+
+#chapitre7 .chap7 {
+    top: 40vh;
+}
+
+#chapitre7 .chap7 .text {
+    text-align: center;
+    font-size: 5vw;
+    line-height: 5vw;
+    font-family: 'Handwriting-black-draft';
+    color: var(--noir);
+}
+
+#chapitre7 .chap7 .fontNormal {
+    font-family: 'Grunge';
+    font-size: 10vw;
+    line-height: 10vw;
+}
+
+@media screen and (max-width: 1000px) {
+    #chapitre7 .cercleBlanc {
+        top: 25vh;
     }
 }
 
