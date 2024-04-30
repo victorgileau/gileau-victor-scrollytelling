@@ -15,3 +15,5 @@
 * JavaScript
 * [Librairie d'animation GSAP](https://gsap.com)
 * [Plugiciel ScrollTrigger](https://gsap.com/scroll/)
+* [Plugiciel Text](https://gsap.com/text/)
+* [Plugicel Motion Path](https://gsap.com/docs/v3/Plugins/MotionPathPlugin/)
