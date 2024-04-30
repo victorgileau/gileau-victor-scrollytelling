@@ -591,6 +591,23 @@ Chapitre 3
     left: 0;
 }
 
+
+#chapitre3 .line {
+    position: absolute;
+    width: 30vw;
+    height: auto;
+    object-fit: contain;
+    object-position: 0 0;
+    filter: drop-shadow(0 0 1.5vmin var(--blanc));
+}
+
+#chapitre3 .line .linePath {
+    fill: none;
+    stroke-width: 0.4em;
+    stroke: var(--blanc);
+}
+
+/*
 #chapitre3 .line {
     position: absolute;
     background-image: url(../media/svg/ligne_blanche.svg);
@@ -601,30 +618,16 @@ Chapitre 3
     width: 5vw;
     z-index: 1;
 }
-
+*/
 #chapitre3 .line.left {
     top: 10vh;
     left: 5vw;
 }
 
-#chapitre3 .line.leftMiddle {
-    top: 5vh;
-    left: 15vw;
-}
-
-#chapitre3 .line.middle {
-    top: 15vh;
-    left: 50vw;
-}
-
 #chapitre3 .line.rightMiddle {
     top: 25vh;
     right: 15vw;
-}
-
-#chapitre3 .line.right {
-    top: 3vh;
-    right: 5vw;
+    transform: scaleX(-1);
 }
 
 @media screen and (max-width: 1000px) {
@@ -984,10 +987,46 @@ Chapitre 6
     top: 20vh;
 }
 
+#chapitre6 .morphSvg {
+    position: absolute;
+    fill: var(--blanc);
+    width: 20vw;
+    height: auto;
+    object-fit: cover;
+    object-position: 0 0;
+    filter: drop-shadow(0 0 1.5vmin var(--blanc));
+}
+
+#chapitre6 .morphSvg .lune {
+    opacity: 0;
+}
+
+#chapitre6 .morphSvg.un {
+    top: 15vh;
+    left: 50vw;
+    z-index: 1;
+}
+
+#chapitre6 .morphSvg.deux {
+    top: 60vh;
+    left: 35vw;
+    z-index: 1;
+}
+
+#chapitre6 .morphSvg.troix {
+    top: 45vh;
+    right: 10vw;
+}
+
 @media screen and (max-width: 700px) {
     #chapitre6 .perso {
         height: 100%;
         width: 50vmin;
+    }
+    #chapitre6 .morphSvg.deux {
+        top: 60vh;
+        left: 55vw;
+        z-index: 1;
     }
 }
 

@@ -2,7 +2,10 @@
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
-gsap.registerPlugin(MotionPathPlugin)
+gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(MorphSVGPlugin);
+gsap.config({trialWarn: true});
+gsap.registerPlugin(DrawSVGPlugin);
 
 const chap1SpriteStand = document.querySelector('#chapitre1 .man');
 const chap2SpriteJ = document.querySelector('#chapitre2 .man');
@@ -82,8 +85,9 @@ let timeline1 = gsap.timeline({
     },
     ease: "none"
 }, '-=45')
-.fromTo('#chapitre1 .sol-1', {x: 0}, { scrub: 1,x: '-50vw', duration: 60}, '-=48')
-.fromTo('#chapitre1 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 60}, '-=48');
+.fromTo('#chapitre1 .sol-1', {x: 0}, {x: '-50vw', duration: 60}, '-=48')
+.fromTo('#chapitre1 .roche.tow, #chapitre1 .roche.tree', {x: 0}, {x: '-10vw', duration: 60}, '-=48')
+.fromTo('#chapitre1 .roche.one', {x: 0}, {x: '-15vw', duration: 60}, '-=52');
 
 //Chapitre 2
 
@@ -129,9 +133,9 @@ let timeline2 = gsap.timeline({
     duration: 10,
     text: "Je vois un carpeau de lumière qui m\'emporte plus loin dans ce rêve des plus intrigant.",
     ease: "none"
-}, '-=5').fromTo('#chapitre2 .sol-1', {x: 0}, { scrub: 1,x: '-500px', duration: 60}, '-=68')
-.fromTo('#chapitre2 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 60}, '-=68')
-.fromTo('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', {x: 0}, { scrub: 1,x: '-8vmin', duration: 20}, '-=68')
+}, '-=5').fromTo('#chapitre2 .sol-1', {x: 0}, {x: '-500px', duration: 60}, '-=68')
+.fromTo('#chapitre2 .roche', {x: 0}, {x: '-10vw', duration: 60}, '-=68')
+.fromTo('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', {x: 0}, {x: '-8vmin', duration: 20}, '-=68')
 .fromTo('#chapitre2', {opacity: 1}, {opacity: 0, duration: 5, ease: 'ease.out'}, '+=5')
 //.fromTo('.cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');
 
@@ -146,6 +150,15 @@ const pathFour = document.querySelector('#pathFour');
 let tl = gsap.timeline().from('#chapitre3 .sprite.man',{ rotation: 360, duration: 2, ease:'none', repeat: -1})
 .from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'ease', yoyo: true, repeat: -1});
 
+/*
+let anime = gsap.from('.linePath', {
+    drawSVG: "100% 100%", 
+    duration: 30,
+    ease:"power1.inOut",
+});
+
+anime.pause()
+*/
 let timeline3 = gsap.timeline({
     duration: 8,
     scrollTrigger: {
@@ -157,15 +170,18 @@ let timeline3 = gsap.timeline({
         toggleActions: 'play pause reverse pause',
         onEnter: () => { 
             textChap3.classList.add('fixed');
+            anime.play();
         }, 
         onLeave: () => {
             textChap3.classList.remove('fixed');
+            anime.restart();
         },
         onLeaveBack: () => {
             textChap3.classList.remove('fixed');
         },
         onEnterBack: () => {
             textChap3.classList.remove('fixed');
+            
         }
     }
 }).from('#chapitre3 .text', {
@@ -217,6 +233,11 @@ let timeline3 = gsap.timeline({
         start: 0.6,
         end: 0,
     }}, '-=80')
+    .from('.linePath', {
+        drawSVG: "100% 100%", 
+        duration: 70,
+        ease:"power1.inOut",
+    }, '-=80');
 //.from('#chapitre3 .sprite.man',{ rotation: 360, duration: 2, ease:'none', repeat: -1})
 //.from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1})
 
@@ -265,15 +286,14 @@ let timeline4 = gsap.timeline({
     },
     ease: "none"
 }, '-=65')
-.fromTo('#chapitre4 .sol-1, #chapitre4 .sol-2', {x: 0}, { scrub: 1,x: '-50vw', duration: 60}, '-=50')
-.fromTo('#chapitre4 .roche', {x: 0}, { scrub: 1,x: '-10vw', duration: 60}, '-=50')
+.fromTo('#chapitre4 .sol-1, #chapitre4 .sol-2', {x: 0}, { x: '-50vw', duration: 60}, '-=50')
+.fromTo('#chapitre4 .roche', {x: 0}, {x: '-10vw', duration: 60}, '-=50')
 .fromTo('#chapitre4',{opacity: 1}, {opacity: 0, duration: 10, ease: 'ease.out'}, '+=5');
 
 //Chapitre 5
 
 const effectObjectGrotteChap5 = gsap.timeline()
-.fromTo(['#chapitre5 .object'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60')
-.fromTo(['#chapitre5 .effect'], {scale: 1}, {scale: 1.5, repeat: -1, yoyo: true, duration: 3});
+.fromTo(['#chapitre5 .object'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60');
 
 effectObjectGrotteChap5.pause();
 
@@ -324,14 +344,14 @@ let timeline5 = gsap.timeline({
         speed: 0.5,
     },
     ease: "none"
-}, '-=65').to('#chapitre5 .sol-1, #chapitre4 .sol-2', { scrub: 1,x: '-300px', duration: 10}, '-=55')
-.fromTo(['#chapitre5 .roche'], {x: 0}, { scrub: 1,x: '-10vw', duration: 10, stagger: { each: 0.5}}, '-=55');
+}, '-=65').to('#chapitre5 .sol-1, #chapitre4 .sol-2', {x: '-20vw', duration: 60}, '-=55')
+.fromTo(['#chapitre5 .roche'], {x: 0}, {x: '-10vw', duration: 60, stagger: { each: 0.5}}, '-=55');
 
 
 //Chapitre 6
 
 const effectObjectGrotteChap6 = gsap.timeline()
-.fromTo(['#chapitre6 .object'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60')
+.fromTo(['#chapitre6 .object, #chapitre6 .morphSvg'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60')
 .fromTo(['#chapitre6 .effect'], {scale: 1}, {scale: 1.5, repeat: -1, yoyo: true, duration: 3});
 
 effectObjectGrotteChap6.pause();
@@ -365,7 +385,16 @@ let timeline6 = gsap.timeline({
         speed: 1,
     },
     ease: "none"
-});
+}).to(".trefle", {
+    duration: 10,
+    stagger: {
+        each: 5,
+    },
+    morphSVG:{
+      shape:".lune", 
+      shapeIndex: 6,
+    }
+}, '-=25');
 
 
 /*
