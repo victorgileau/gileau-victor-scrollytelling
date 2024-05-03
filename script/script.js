@@ -237,7 +237,7 @@ let timeline3 = gsap.timeline({
         duration: 70,
         ease:"power1.inOut",
     }, '-=80')
-.fromTo('#chapitre4',{opacity: 1}, {opacity: 0, duration: 10, ease: 'ease.out'}, '-=20');
+.fromTo('#chapitre3',{opacity: 1}, {opacity: 0, duration: 10, ease: 'ease.out'}, '-=20');
 //.from('#chapitre3 .sprite.man',{ rotation: 360, duration: 2, ease:'none', repeat: -1})
 //.from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1})
 
