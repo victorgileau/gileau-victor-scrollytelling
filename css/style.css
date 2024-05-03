@@ -114,6 +114,13 @@ Header
     line-height: 2em;
 }
 
+.header p.description.bas {
+    padding: 2vw 10vw;
+    width: 80vw;
+    height: auto;
+    border-radius: 10px;
+}
+
 .header .down {
     display: flex;
     flex-direction: column;
@@ -150,6 +157,7 @@ section div {
 }
 
 section {
+    overflow-x: hidden;
     border: 1px solid red;
     width: 100%;
     height: 100vh;

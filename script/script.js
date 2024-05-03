@@ -171,11 +171,9 @@ let timeline3 = gsap.timeline({
         toggleActions: 'play pause reverse pause',
         onEnter: () => { 
             textChap3.classList.add('fixed');
-            anime.play();
         }, 
         onLeave: () => {
             textChap3.classList.remove('fixed');
-            anime.restart();
         },
         onLeaveBack: () => {
             textChap3.classList.remove('fixed');
@@ -184,7 +182,8 @@ let timeline3 = gsap.timeline({
             textChap3.classList.remove('fixed');
         }
     }
-}).from('#chapitre3 .text', {
+})
+.from('#chapitre3 .text', {
     duration: 20,
     text: {
         speed: 0.3,
@@ -237,7 +236,8 @@ let timeline3 = gsap.timeline({
         drawSVG: "100% 100%", 
         duration: 70,
         ease:"power1.inOut",
-    }, '-=80');
+    }, '-=80')
+.fromTo('#chapitre4',{opacity: 1}, {opacity: 0, duration: 10, ease: 'ease.out'}, '-=20');
 //.from('#chapitre3 .sprite.man',{ rotation: 360, duration: 2, ease:'none', repeat: -1})
 //.from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1})
 
