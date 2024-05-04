@@ -6,6 +6,7 @@
     <title>Le rêve de J</title>
     <link rel="icon" type="image/x-icon" href="./media/img/img_elements_visuels/chap5-6/chap5-6_ball-v1.webp">
     <link rel="stylesheet" href="./css/style.css">
+    
 </head>
 <body>
     <header class="header">
@@ -17,9 +18,9 @@
         </p>
 
         <div class="down">
-            <img class="fleche-down" src="./media/img/img_elements_visuels/chap1-2/intro_fleche-down-white.webp" alt="fleche-down.png">
-            <img class="fleche-down" src="./media/img/img_elements_visuels/chap1-2/intro_fleche-down-white.webp" alt="fleche-down.png">
-            <img class="fleche-down" src="./media/img/img_elements_visuels/chap1-2/intro_fleche-down-white.webp" alt="fleche-down.png">
+            <img loading="lazy" class="fleche-down" src="./media/img/img_elements_visuels/chap1-2/intro_fleche-down-white.webp" alt="fleche-down.png">
+            <img loading="lazy" class="fleche-down" src="./media/img/img_elements_visuels/chap1-2/intro_fleche-down-white.webp" alt="fleche-down.png">
+            <img loading="lazy" class="fleche-down" src="./media/img/img_elements_visuels/chap1-2/intro_fleche-down-white.webp" alt="fleche-down.png">
         </div>
 
         <p class="description bas">
@@ -34,18 +35,22 @@
                 <li>scrollTrigger 
                     <ul> 
                         <li>trigger= #chapitre1</li>
-                        <li>background-position : x(-10%)</li>
                         <li>toggleActions: 'play pause reverse pause'</li>
                         <li>Personnage sprite : deplacement de x(0) à x(-80vw)</li>
+                        <li>OnStart :</li>
+                        <ul>
+                          <li>sprite (classList) marche</li>
+                        </ul>
                         <li>Text : passer d'un text à l'autre</li>
-                        <li>Sol 1 : de x(0) à x(-50vw)</li>
-                        <li>Tout les roches : de x(0) à x(-14vw)</li>
+                        <li>Sol 1 : de x(0) à x(-20vw)</li>
+                        <li>Roche 2 et 3 : de x(5vw) à x(-10vw)</li>
+                        <li>Roche 1 : de x(5vw) à x(-14vw)</li>
                     </ul> 
                 </li> 
                 <li>scrollTrigger 
                     <ul> 
                         <li>trigger= #chapitre1</li>
-                        <li>background-position : x(-10%)</li>
+                        <li>background-position : x(-10vw)</li>
                         <li>pin</li>
                     </ul> 
                 </li>
@@ -66,14 +71,22 @@
         </section>
         <section class="section black" id="chapitre2">
             <ul class="technique-gsap">
-                <li>Cerle : scale(1) à scale(1.4) répétition</li>
+                <li>Cerle : scale(1) à scale(1.4) répétition + yoyo</li>
                 <li>scrollTrigger 
                     <ul> 
                         <li>trigger= #chapitre2</li> 
                         <li>toggleActions: 'play pause reverse pause'</li>
-                        <li>Personnage sprite : deplacement de x(0) à x(30vmin)</li> 
+                        <li>Personnage sprite : deplacement de x(0) à x(30vmin)</li>
+                        <li>OnStart :</li>
+                        <ul>
+                          <li>sprite (classList) marche</li>
+                        </ul>
+                        <li>OnComplete :</li>
+                        <ul>
+                          <li>sprite (classList) arrête debout</li>
+                        </ul>
                         <li>Text : passer d'un text à l'autre</li>
-                        <li>Sol 1 : de x(0) à x(-500px)</li>
+                        <li>Sol 1 : de x(0) à x(-20vw)</li>
                         <li>Tout les roches : de x(0) à x(-10vw)</li>
                         <li>Crapeau et cerle : de x(0) à x(-8vmin)</li>
                         <li>Chapitre2 : de opacity(1) à opacity(0)</li>
@@ -82,7 +95,7 @@
                 <li>scrollTrigger 
                     <ul> 
                         <li>trigger= #chapitre2</li>
-                        <li>background-position : x(-10%)</li>
+                        <li>background-position : x(-10vw)</li>
                         <li>pin</li>
                     </ul> 
                 </li>
@@ -113,12 +126,30 @@
                     <ul>
                         <li>trigger= #chapitre3</li>
                         <li>Text : passer d'un text à l'autre et 'fixed' au chapitre3</li>
+                        <li>OnEnter :</li>
+                        <ul>
+                          <li>Text chapitre3 : (classList.add('fixed'))</li>
+                        </ul>
+                        <li>OnLeave :</li>
+                        <ul>
+                          <li>Text chapitre3 : (classList.remove('fixed'))</li>
+                        </ul>
+                        <li>OnLeaveBack :</li>
+                        <ul>
+                          <li>Text chapitre3 : (classList.remove('fixed'))</li>
+                        </ul>
+                        <li>OnEnterBack :</li>
+                        <ul>
+                          <li>Text chapitre3 : (classList.remove('fixed'))</li>
+                        </ul>
                         <li>Papier cinq, Papier six et personnage sprite : y(0) à y(400vh)</li>
                         <li>Formes brisées : y(0) à y(50vh) avec stagger(each(2))</li>
                         <li>Papier un : Motion Path</li>
                         <li>Papier deux : Motion Path</li>
                         <li>Papier troix : Motion Path</li>
                         <li>Papier quatre : Motion Path</li>
+                        <li>Deux lignes blanches : DrawSVG (100% à 100%)</li>
+                        <li>Chapitre3 : oapcité(1) à opacité(0)</li>
                     </ul>
                 </li>
                 <li>scrollTrigger 
@@ -140,7 +171,7 @@
             <div class="papier cinq"></div>
             <div class="papier six"></div>
 
-            <svg class="svgPath" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 6480" preserveAspectRatio="xMinYMin slice">
+            <svg loading="lazy" class="svgPath" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 6480" preserveAspectRatio="xMinYMin slice">
                 <defs>
                   <style>
                     .cls-1 {
@@ -156,7 +187,7 @@
                 </g>
             </svg>
 
-            <svg class="svgPath" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 6480" preserveAspectRatio="xMinYMin slice">
+            <svg loading="lazy" class="svgPath" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 6480" preserveAspectRatio="xMinYMin slice">
                 <defs>
                   <style>
                     .cls-1 {
@@ -172,7 +203,7 @@
                 </g>
             </svg>
 
-            <svg class="svgPath" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 6480" preserveAspectRatio="xMinYMin slice">
+            <svg loading="lazy" class="svgPath" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 6480" preserveAspectRatio="xMinYMin slice">
                 <defs>
                   <style>
                     .cls-1 {
@@ -190,7 +221,7 @@
                 </g>
             </svg>
 
-            <svg class="svgPath" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 6480" preserveAspectRatio="xMinYMin slice">
+            <svg loading="lazy" class="svgPath" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 6480" preserveAspectRatio="xMinYMin slice">
                 <defs>
                   <style>
                     .cls-1 {
@@ -223,13 +254,13 @@
             <div class="line right"></div>
             -->
 
-            <svg version="1.0" class="line left" id="svgLineOne" data-name="svgLineOne" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 334.83 3599.26">
+            <svg loading="lazy" version="1.0" class="line left" id="svgLineOne" data-name="svgLineOne" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 334.83 3599.26">
                 <g id="Calque_5" data-name="Calque 5">
                   <path class="linePath" id="drawOne" d="m117.25,142.99c20.08,8.62,71.68,26.9,84.59-.22,2.26-4.85,2.87-10.27,2.77-15.61-.17-7.14-1.41-14.3-4.63-20.71-13.47-26.14-46.85-34.38-74.26-32.81-36.36,2.09-72.04,23.39-69.23,63.87,1.78,22.05,5.55,53.13,24.23,67.79,14.32,11.06,33.63,9.59,50.73,12.71,26.27,2.36,59.03-4.97,83.48-14.79,32.12-13.12,61.35-37.08,43.78-75.19C232.27,65.35,122.3-24.93,58.93,26.69,18.26,62.6,7.13,135.54,16.23,187.02c6.69,41.26,29.93,86.18,74.17,94.84,1.64.35,3.3.58,4.95.88,0,0,5.06.59,5.06.59,13.38,1.33,27,3.13,39.63,8.79,34.36,15.81,16.44,51.05,6.96,77.12-10.29,26.51-18.75,53.76-19.64,82.12-.21,43.39,2.84,86.94,4.63,130.36,11.41,230.58,24.07,468.79,31.62,698.8,4.33,145.87,9.14,291.85,3.25,437.81-1.63,29.7-3.21,58.87-8.74,88.41-3.49,17.41-5.64,35.4-7.26,53.08-3.66,39.7-5.56,79.53-7.15,119.43-10.75,349.26-4.27,699.01,3.8,1048.3,2.88,94.49,4.84,189.13,11.71,283.39.83,8.64,1.41,17.21,3.77,25.54,17.41,61.89,118.92,2.32,157.85,81.25,6.83,13.93,10.03,28.79,12.2,43.95,5.48,36.58-.93,77.23-27.5,104.72-22.14,23.32-54.58,33.38-86.2,32.84-22.64-.35-44.7-5.69-65.68-13.74-20.73-7.87-40.75-17.6-59.67-29.17-35.47-21.2-103.51-74.97-81.35-122.76,20.6-42.26,104.11-41.73,145.04-37.71,29.83,2.96,97.75,14.67,109.56,45.38,0,0,.48,1.43.48,1.43.24.98.48,1.97.62,2.97,0,0,.14,1.51.14,1.51.06.52.08,1,.07,1.46,0,0,0,1.41,0,1.41,0,0-.02,2.82-.02,2.82-.69,14.96-5.58,29.41-12.92,42.33-7.83,13.65-18.67,25.81-32.32,33.82,0,0-2.44,1.36-2.44,1.36-1.65.86-3.36,1.63-5.07,2.37,0,0-2.63.98-2.63.98,0,0-1.31.49-1.31.49,0,0-1.35.38-1.35.38l-2.7.75c-9.12,2.19-18.83,1.62-27.57-1.81-12.76-5.4-23.47-15.31-30.84-26.96-9.65-15.09-12.54-37.19-.66-51.91,4.61-5.74,11.82-9.37,19.22-9.06,3.66.1,7.25,1.02,10.61,2.41-3.39-1.33-6.98-2.18-10.61-2.21-20.22-.05-28.74,22.79-25.21,40.03,2.51,14.23,11.27,26.84,22.33,35.91,17.55,14.96,38.5,16.76,58.98,3.27,24.38-16.42,41.33-48.04,40.09-77.53-.76-8.71-7.58-15.02-14.41-19.81-44.71-30.26-172.28-39.15-217.25-5.89-25.37,19.7-16.99,48.37,1.2,71.51,17.58,22.37,41.03,40.01,65.4,54.63,21.59,12.82,44.58,23.38,68.42,31.26,33,10.85,70.56,13.35,102.52-1.62,42.87-20.75,56.34-63.95,50.94-108.83-2.48-18.62-6.44-38-17.11-53.74-39.13-58.32-140.56,1.86-157.14-83.07-.3-2.05-.64-3.86-.89-5.76-.6-4.74-1.08-9.22-1.53-13.87-3.24-36.43-4.98-73-6.76-109.42-14.69-349.59-20.7-699.47-17.76-1049.35,1.22-87.62,2.82-175.17,8.59-262.67,1.52-21.92,3.4-44.16,6.38-65.96.92-6.75,2.5-15.4,3.79-22.09,2.66-13.64,4.24-27.95,5.56-42.24,7.81-101.32,5.7-203.17,4.48-304.78-5.62-320.43-24.34-640.53-36.61-960.78-.37-14.79-.98-29.31-.5-44.28,1.08-30.13,10.28-59.43,21.18-87.01,2.63-6.82,5.3-13.55,7.63-20.2,2.3-6.62,4.3-13.27,4.85-19.3.47-5.19-.36-10.29-4.29-14.02-1.85-1.76-4.29-3.33-7.07-4.64-2.78-1.32-5.88-2.39-9.09-3.31-9.86-2.97-21.03-3.78-31.41-5.13-11.69-1.83-23.1-5.68-33.31-11.72C-18.13,238.01-14.63,92.28,39.92,28.78c48.08-56.68,127.14-19.11,172.24,22.41,24.22,21.85,55.71,59.3,60.43,92.87,5.49,56.4-75.55,77.93-119.55,81.16-7.55.53-14.97.69-22.58-.33-7.18-1.14-14.35-2.09-21.62-2.98-20.94-2.57-36.41-9.92-46.12-29.84-5.67-11.89-8.3-24.83-9.98-37.73,0,0-.59-5.5-.59-5.5-.72-7.45-1.39-14.89-.48-22.36,1.28-11.32,6.05-22.3,13.57-30.85,5.02-5.68,11.03-10.41,17.58-14.05,13.01-7.28,27.9-10.84,42.7-11.56,28.45-1.33,63.06,8.04,76.51,35.46,3.25,6.74,4.45,14.26,4.49,21.67.01,5.53-.74,11.3-3.21,16.33-13.88,27.75-64.45,9.28-86.07-.49h0Z"/>
                 </g>
             </svg>
 
-            <svg version="1.0" class="line rightMiddle" id="svgLineTwo" data-name="svgLineTwo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 334.83 3599.26">
+            <svg loading="lazy" version="1.0" class="line rightMiddle" id="svgLineTwo" data-name="svgLineTwo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 334.83 3599.26">
                 <g id="Calque_5" data-name="Calque 5">
                   <path class="linePath" id="drawTwo" d="m117.25,142.99c20.08,8.62,71.68,26.9,84.59-.22,2.26-4.85,2.87-10.27,2.77-15.61-.17-7.14-1.41-14.3-4.63-20.71-13.47-26.14-46.85-34.38-74.26-32.81-36.36,2.09-72.04,23.39-69.23,63.87,1.78,22.05,5.55,53.13,24.23,67.79,14.32,11.06,33.63,9.59,50.73,12.71,26.27,2.36,59.03-4.97,83.48-14.79,32.12-13.12,61.35-37.08,43.78-75.19C232.27,65.35,122.3-24.93,58.93,26.69,18.26,62.6,7.13,135.54,16.23,187.02c6.69,41.26,29.93,86.18,74.17,94.84,1.64.35,3.3.58,4.95.88,0,0,5.06.59,5.06.59,13.38,1.33,27,3.13,39.63,8.79,34.36,15.81,16.44,51.05,6.96,77.12-10.29,26.51-18.75,53.76-19.64,82.12-.21,43.39,2.84,86.94,4.63,130.36,11.41,230.58,24.07,468.79,31.62,698.8,4.33,145.87,9.14,291.85,3.25,437.81-1.63,29.7-3.21,58.87-8.74,88.41-3.49,17.41-5.64,35.4-7.26,53.08-3.66,39.7-5.56,79.53-7.15,119.43-10.75,349.26-4.27,699.01,3.8,1048.3,2.88,94.49,4.84,189.13,11.71,283.39.83,8.64,1.41,17.21,3.77,25.54,17.41,61.89,118.92,2.32,157.85,81.25,6.83,13.93,10.03,28.79,12.2,43.95,5.48,36.58-.93,77.23-27.5,104.72-22.14,23.32-54.58,33.38-86.2,32.84-22.64-.35-44.7-5.69-65.68-13.74-20.73-7.87-40.75-17.6-59.67-29.17-35.47-21.2-103.51-74.97-81.35-122.76,20.6-42.26,104.11-41.73,145.04-37.71,29.83,2.96,97.75,14.67,109.56,45.38,0,0,.48,1.43.48,1.43.24.98.48,1.97.62,2.97,0,0,.14,1.51.14,1.51.06.52.08,1,.07,1.46,0,0,0,1.41,0,1.41,0,0-.02,2.82-.02,2.82-.69,14.96-5.58,29.41-12.92,42.33-7.83,13.65-18.67,25.81-32.32,33.82,0,0-2.44,1.36-2.44,1.36-1.65.86-3.36,1.63-5.07,2.37,0,0-2.63.98-2.63.98,0,0-1.31.49-1.31.49,0,0-1.35.38-1.35.38l-2.7.75c-9.12,2.19-18.83,1.62-27.57-1.81-12.76-5.4-23.47-15.31-30.84-26.96-9.65-15.09-12.54-37.19-.66-51.91,4.61-5.74,11.82-9.37,19.22-9.06,3.66.1,7.25,1.02,10.61,2.41-3.39-1.33-6.98-2.18-10.61-2.21-20.22-.05-28.74,22.79-25.21,40.03,2.51,14.23,11.27,26.84,22.33,35.91,17.55,14.96,38.5,16.76,58.98,3.27,24.38-16.42,41.33-48.04,40.09-77.53-.76-8.71-7.58-15.02-14.41-19.81-44.71-30.26-172.28-39.15-217.25-5.89-25.37,19.7-16.99,48.37,1.2,71.51,17.58,22.37,41.03,40.01,65.4,54.63,21.59,12.82,44.58,23.38,68.42,31.26,33,10.85,70.56,13.35,102.52-1.62,42.87-20.75,56.34-63.95,50.94-108.83-2.48-18.62-6.44-38-17.11-53.74-39.13-58.32-140.56,1.86-157.14-83.07-.3-2.05-.64-3.86-.89-5.76-.6-4.74-1.08-9.22-1.53-13.87-3.24-36.43-4.98-73-6.76-109.42-14.69-349.59-20.7-699.47-17.76-1049.35,1.22-87.62,2.82-175.17,8.59-262.67,1.52-21.92,3.4-44.16,6.38-65.96.92-6.75,2.5-15.4,3.79-22.09,2.66-13.64,4.24-27.95,5.56-42.24,7.81-101.32,5.7-203.17,4.48-304.78-5.62-320.43-24.34-640.53-36.61-960.78-.37-14.79-.98-29.31-.5-44.28,1.08-30.13,10.28-59.43,21.18-87.01,2.63-6.82,5.3-13.55,7.63-20.2,2.3-6.62,4.3-13.27,4.85-19.3.47-5.19-.36-10.29-4.29-14.02-1.85-1.76-4.29-3.33-7.07-4.64-2.78-1.32-5.88-2.39-9.09-3.31-9.86-2.97-21.03-3.78-31.41-5.13-11.69-1.83-23.1-5.68-33.31-11.72C-18.13,238.01-14.63,92.28,39.92,28.78c48.08-56.68,127.14-19.11,172.24,22.41,24.22,21.85,55.71,59.3,60.43,92.87,5.49,56.4-75.55,77.93-119.55,81.16-7.55.53-14.97.69-22.58-.33-7.18-1.14-14.35-2.09-21.62-2.98-20.94-2.57-36.41-9.92-46.12-29.84-5.67-11.89-8.3-24.83-9.98-37.73,0,0-.59-5.5-.59-5.5-.72-7.45-1.39-14.89-.48-22.36,1.28-11.32,6.05-22.3,13.57-30.85,5.02-5.68,11.03-10.41,17.58-14.05,13.01-7.28,27.9-10.84,42.7-11.56,28.45-1.33,63.06,8.04,76.51,35.46,3.25,6.74,4.45,14.26,4.49,21.67.01,5.53-.74,11.3-3.21,16.33-13.88,27.75-64.45,9.28-86.07-.49h0Z"/>
                 </g>
@@ -241,17 +272,29 @@
                     <ul> 
                         <li>trigger= #chapitre4</li> 
                         <li>toggleActions: 'play pause reverse pause'</li>
+                        <li>OnEnter</li>
+                        <ul>
+                          <li>Text chapitre3 : (classList.remove('fixed'))</li>
+                        </ul>
                         <li>Personnage sprite : x(-70vw) à x(70vw)</li>
+                        <li>OnStart :</li>
+                        <ul>
+                          <li>sprite (classList) marche</li>
+                        </ul>
+                        <li>OnComplete :</li>
+                        <ul>
+                          <li>sprite (classList) arrête debout</li>
+                        </ul>
                         <li>Text : passer d'un text à l'autre</li>
                         <li>Sol 1 et Sol 2 : x(0) à x(-50vw)</li>
-                        <li>Tout les roches : x(0) à s(-10vw)</li>
+                        <li>Tout les roches : x(0) à x(-10vw)</li>
                         <li>Chapitre4 : opacité(1) à opacité(0)</li>
                     </ul> 
                 </li>
                 <li>scrollTrigger 
                     <ul> 
                         <li>trigger= #chapitre4</li> 
-                        <li>background-position : x(-10%)</li>
+                        <li>background-position : x(-10vw)</li>
                         <li>pin</li>
                     </ul> 
                 </li>
@@ -280,14 +323,22 @@
                     <ul>
                         <li>trigger= chapitre5</li>
                         <ul>
-                            <li>onEnter : Animation Chapitre 5 activer</li>
+                            <li>onEnter : Animation Chapitre 5 activer + (chapitre3.classList.remove('fixed'))</li>
                             <li>onLeave : Animation Chapitre 5 sur pause</li>
                         </ul>
                         <li>Chapitre5 : opacité(0) à opacité(1)</li>
                         <li>Personnage sprite : x(0) à x(50vw)</li>
+                        <li>OnStart :</li>
+                        <ul>
+                          <li>sprite (classList) marche</li>
+                        </ul>
+                        <li>OnComplete :</li>
+                        <ul>
+                          <li>sprite (classList) arrête debout</li>
+                        </ul>
                         <li>Text : passer d'un text à l'autre</li>
-                        <li>Sol 1 et Sol 2 : x(0) à x(-300px)</li>
-                        <li>Tout les roches : x(0) à s(-10vw) stagger(each(0.5))</li>
+                        <li>Sol 1 et Sol 2 : x(0) à x(-20vw)</li>
+                        <li>Tout les roches : x(0) à x(-10vw) stagger(each(0.5))</li>
                     </ul>
                 </li>
                 <li>scrollTrigger 
@@ -331,10 +382,10 @@
                     <ul>
                         <li>trigger= chapitre6</li>
                         <ul>
-                            <li>onEnter : Animation Chapitre 6 activer</li>
-                            <li>onLeave : Animation Chapitre 6 sur pause</li>
+                            <li>onEnter : Animation Chapitre 6 activer  + (chapitre3.classList.remove('fixed'))</li>
                         </ul>
                         <li>Text : passer d'un text à l'autre</li>
+                        <li>SVG trefle = lune : morpSVG, shapeIndex: 6</li>
                     </ul>
                 </li>
                 <li>scrollTrigger 
@@ -350,7 +401,7 @@
             </div>
             <div class="perso"></div>
 
-            <svg class="morphSvg un" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 437.15 491.03">
+            <svg loading="lazy" class="morphSvg un" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 437.15 491.03">
                 <defs>
                   <style>
                     .cls-1 {
@@ -366,7 +417,7 @@
                 </g>
             </svg>
 
-            <svg class="morphSvg deux" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 437.15 491.03">
+            <svg loading="lazy" class="morphSvg deux" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 437.15 491.03">
                 <defs>
                   <style>
                     .cls-1 {
@@ -382,7 +433,7 @@
                 </g>
             </svg>
 
-            <svg class="morphSvg troix" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 437.15 491.03">
+            <svg loading="lazy" class="morphSvg troix" id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 437.15 491.03">
                 <defs>
                   <style>
                     .cls-1 {
@@ -414,10 +465,16 @@
         </section>
         <section class="section black" id="chapitre7">
           <ul class="technique-gsap"> 
-            <li>...</li>
+            <li>Cerle : (opacité(0.6) et scale(0.6)) à (opacité(1) et scale(1)) répétition + yoyo</li>
             <li>scrollTrigger
                 <ul>
                     <li>trigger= chapitre7</li>
+                    <li><em>pas de scrub</em></li>
+                    <li>marker : start(blanc) end(mauve)</li>
+                    <ul>
+                      <li>onEnter : (chapitre3.classList.remove('fixed'))</li>
+                    </ul>
+                    <li>Text : passer d'un text à l'autre + ajout de class + changement de couleur du text</li>
                 </ul>
             </li>
         </ul>

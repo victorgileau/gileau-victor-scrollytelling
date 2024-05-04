@@ -54,7 +54,8 @@ let timeline1 = gsap.timeline({
         toggleActions: 'play pause reverse pause',
     }
 }).to('#chapitre1', {
-    backgroundPosition: "-10% 0",
+    backgroundPosition: "-20vw 0",
+    duration: 30,
     ease: "ease.out",
     scrollTrigger: {
         markers: true,
@@ -67,27 +68,23 @@ let timeline1 = gsap.timeline({
 })
 .from(chap1SpriteStand, {
     x: '-80vw',
-    duration: 40,
+    duration: 60,
     onStart: () => {
         chap1SpriteStand.classList.remove('standJ');
         chap1SpriteStand.classList.add('walkJ');
-        chapitre1.classList.add('bgMove');
     },
-    onComplete: () => {
-        chapitre1.classList.add('bgMoveStop');
-    }
     }, '-=40.5'
 ).to('#chapitre1 .text',{
-    duration: 8,
+    duration: 30,
     text: {
         speed: 1,
         value: "Je m\'avance dans ce rêve qui m\'est inconnu.",
     },
     ease: "none"
 }, '-=45')
-.fromTo('#chapitre1 .sol-1', {x: 0}, {x: '-50vw', duration: 60}, '-=48')
-.fromTo('#chapitre1 .roche.tow, #chapitre1 .roche.tree', {x: 0}, {x: '-10vw', duration: 60}, '-=48')
-.fromTo('#chapitre1 .roche.one', {x: 0}, {x: '-15vw', duration: 60}, '-=52');
+.fromTo('#chapitre1 .sol-1', {x: 0}, {x: '-20vw', duration: 60}, '-=60')
+.fromTo('#chapitre1 .roche.tow, #chapitre1 .roche.tree', {x: '5vw'}, {x: '-10vw', duration: 60}, '-=60')
+.fromTo('#chapitre1 .roche.one', {x: '5vw'}, {x: '-15vw', duration: 60}, '-=60');
 
 //-----------------Chapitre 2----------------
 
@@ -104,9 +101,9 @@ let timeline2 = gsap.timeline({
         toggleActions: 'play pause reverse pause',
     }
 }).to('#chapitre2', {
-    backgroundPosition: "-10% 0",
+    backgroundPosition: "-10vw 0",
     ease: "none",
-    duration: 60,
+    duration: 40,
     scrollTrigger: {
         markers: true,
         scrub: true,
@@ -121,28 +118,25 @@ let timeline2 = gsap.timeline({
     duration: 68,
     onStart: () => {
         chap2SpriteJ.classList.add('walkJ');
-        chapitre2.classList.add('bgMove');
     },
     onComplete: () => {
         chap2SpriteJ.classList.remove('walkJ');
         chap2SpriteJ.classList.add('standJ');
-        chapitre2.classList.add('bgMoveStop');
     }
     }, '-=60.5'
 ).to('#chapitre2 .text', {
-    duration: 10,
+    duration: 30,
     text: "Je vois un carpeau de lumière qui m\'emporte plus loin dans ce rêve des plus intrigant.",
     ease: "none"
-}, '-=5').fromTo('#chapitre2 .sol-1', {x: 0}, {x: '-500px', duration: 60}, '-=68')
+}, '-=35').fromTo('#chapitre2 .sol-1', {x: 0}, {x: '-20vw', duration: 60}, '-=68')
 .fromTo('#chapitre2 .roche', {x: 0}, {x: '-10vw', duration: 60}, '-=68')
 .fromTo('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', {x: 0}, {x: '-8vmin', duration: 20}, '-=68')
-.fromTo('#chapitre2', {opacity: 1}, {opacity: 0, duration: 5, ease: 'ease.out'}, '+=5')
+.fromTo('#chapitre2', {opacity: 1}, {opacity: 0, duration: 5, ease: 'ease.out'}, '+=10')
 //.fromTo('.cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');
 
 //------------Chapitre 3----------------
 
 const textChap3 = document.querySelector('#chapitre3 .textBox');
-const chap1papierUn = document.querySelector('#chapitre3 .un');
 const pathOne = document.querySelector('#pathOne');
 const pathTwo = document.querySelector('#pathTwo');
 const pathTree = document.querySelector('#pathTree');
@@ -237,7 +231,7 @@ let timeline3 = gsap.timeline({
         duration: 70,
         ease:"power1.inOut",
     }, '-=80')
-.fromTo('#chapitre3',{opacity: 1}, {opacity: 0, duration: 10, ease: 'ease.out'}, '-=20');
+.fromTo('#chapitre3',{opacity: 1}, {opacity: 0, duration: 10, ease: 'ease.out'}, '-=10');
 //.from('#chapitre3 .sprite.man',{ rotation: 360, duration: 2, ease:'none', repeat: -1})
 //.from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1})
 
@@ -258,8 +252,8 @@ let timeline4 = gsap.timeline({
         },
     }
 }).from('#chapitre4', {
-    backgroundPosition: "-10% 0",
-    ease: "ease.out",
+    backgroundPosition: "-10vw 0",
+    ease: "none",
     scrollTrigger: {
         markers: true,
         scrub: 1,
@@ -273,12 +267,10 @@ let timeline4 = gsap.timeline({
     duration: 60,
     onStart: () => {
         chap4SpriteJ.classList.add('walkJ');
-        chapitre4.classList.add('bgMove');
     },
     onComplete: () => {
         chap4SpriteJ.classList.remove('walkJ');
         chap4SpriteJ.classList.add('standJ');
-        chapitre4.classList.add('bgMoveStop');
     }
     }, '-=5'
 ).to('#chapitre4 .text', {
@@ -318,6 +310,8 @@ let timeline5 = gsap.timeline({
         }
     }
 }).from('#chapitre5', {
+    backgroundPosition: "-5vw 0",
+    ease: "none",
     scrollTrigger: {
         markers: true,
         scrub: 1,
@@ -333,12 +327,10 @@ let timeline5 = gsap.timeline({
     duration: 60,
     onStart: () => {
         chap5SpriteJ.classList.add('walkJ');
-        chapitre5.classList.add('bgMove');
     },
     onComplete: () => {
         chap5SpriteJ.classList.remove('walkJ');
         chap5SpriteJ.classList.add('standJ');
-        chapitre5.classList.add('bgMoveStop');
     }
     },)
 .to('#chapitre5 .text', {

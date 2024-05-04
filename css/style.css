@@ -67,6 +67,7 @@ Header
 */
 
 .header {
+    overflow-x: hidden;
     background-image: url(../media/img/img_arriere_plan/scene-3-chapitre3.webp);
     background-size: cover;
     background-position: center;
@@ -157,7 +158,7 @@ section div {
 }
 
 section {
-    overflow-x: hidden;
+    overflow: hidden;
     border: 1px solid red;
     width: 100vw;
     height: 100vh;
@@ -773,6 +774,7 @@ Chapitre 5
 */
 
 #chapitre5 {
+    width: 100vw;
     background-image: url(../media/img/img_arriere_plan/bg-chap6.webp);
     overflow: hidden;
 }
@@ -781,7 +783,7 @@ Chapitre 5
     text-align: center;
     text-shadow: 0 0 5vw var(--blanc);
 }
-
+/*
 #chapitre5.bgMove {
     animation-play-state: running;
     animation: chap5BGMove;
@@ -796,7 +798,7 @@ Chapitre 5
     0% { background-position: 0 0;}
     100% { background-position: -200px 0;}
 }
-
+*/
 #chapitre5 .sprite {
     bottom: 6vh;
     position: absolute;
