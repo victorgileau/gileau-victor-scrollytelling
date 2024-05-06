@@ -1,11 +1,11 @@
-//-------------Index-------------
+/*-------------Index-------------*/
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(MotionPathPlugin);
-//gsap.registerPlugin(MorphSVGPlugin);
-//gsap.config({trialWarn: true});
-//gsap.registerPlugin(DrawSVGPlugin);
+/*gsap.registerPlugin(MorphSVGPlugin);
+gsap.config({trialWarn: true});
+gsap.registerPlugin(DrawSVGPlugin);*/
 
 const chap1SpriteStand = document.querySelector('#chapitre1 .man');
 const chap2SpriteJ = document.querySelector('#chapitre2 .man');
@@ -25,7 +25,7 @@ let timeline = gsap.timeline().from(['.fleche-down'], {
     stagger: {
         each: 0.5,
     },
-})
+});
 
 const techniqueGsap = document.querySelector('.technique-gsap');
 let scrollIndex;
@@ -41,7 +41,7 @@ if (techniqueGsap != null) {
     }
 }
 
-//-------------Chapitre 1---------------
+/*-------------Chapitre 1---------------*/
 
 let timeline1 = gsap.timeline({
     duration: 40,
@@ -86,7 +86,7 @@ let timeline1 = gsap.timeline({
 .fromTo('#chapitre1 .roche.tow, #chapitre1 .roche.tree', {x: '5vw'}, {x: '-10vw', duration: 60}, '-=60')
 .fromTo('#chapitre1 .roche.one', {x: '5vw'}, {x: '-15vw', duration: 60}, '-=60');
 
-//-----------------Chapitre 2----------------
+/*-----------------Chapitre 2----------------*/
 
 const tl2 = gsap.timeline().fromTo('#chapitre2 .cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');
 
@@ -131,10 +131,10 @@ let timeline2 = gsap.timeline({
 }, '-=35').fromTo('#chapitre2 .sol-1', {x: 0}, {x: '-20vw', duration: 60}, '-=68')
 .fromTo('#chapitre2 .roche', {x: 0}, {x: '-10vw', duration: 60}, '-=68')
 .fromTo('#chapitre2 .sprite.frog, #chapitre2 .cercleBlanc', {x: 0}, {x: '-8vmin', duration: 20}, '-=68')
-.fromTo('#chapitre2', {opacity: 1}, {opacity: 0, duration: 5, ease: 'ease.out'}, '+=10')
-//.fromTo('.cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');
+.fromTo('#chapitre2', {opacity: 1}, {opacity: 0, duration: 5, ease: 'ease.out'}, '+=10');
+/*.fromTo('.cercleBlanc', {scale: 1}, { scale: 1.4, repeat: -1, duration: 4,  yoyo: true, ease: 'power1'}, '-=32');*/
 
-//------------Chapitre 3----------------
+/*------------Chapitre 3----------------*/
 
 const textChap3 = document.querySelector('#chapitre3 .textBox');
 const pathOne = document.querySelector('#pathOne');
@@ -233,11 +233,11 @@ let timeline3 = gsap.timeline({
         ease:"power1.inOut",
     }, '-=80')*/
 .fromTo('#chapitre3',{opacity: 1}, {opacity: 0, duration: 10, ease: 'ease.out'}, '-=10');
-//.from('#chapitre3 .sprite.man',{ rotation: 360, duration: 2, ease:'none', repeat: -1})
-//.from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1})
+/*.from('#chapitre3 .sprite.man',{ rotation: 360, duration: 2, ease:'none', repeat: -1})
+.from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1})*/
 
 
-//---------------Chapitre 4-----------------
+/*---------------Chapitre 4-----------------*/
 
 let timeline4 = gsap.timeline({
     duration: 60,
@@ -286,7 +286,7 @@ let timeline4 = gsap.timeline({
 .fromTo('#chapitre4 .roche', {x: 0}, {x: '-10vw', duration: 60}, '-=50')
 .fromTo('#chapitre4',{opacity: 1}, {opacity: 0, duration: 10, ease: 'ease.out'}, '+=5');
 
-//-----------------Chapitre 5-----------------
+/*-----------------Chapitre 5-----------------*/
 
 const effectObjectGrotteChap5 = gsap.timeline()
 .fromTo(['#chapitre5 .object'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60');
@@ -345,7 +345,7 @@ let timeline5 = gsap.timeline({
 .fromTo(['#chapitre5 .roche'], {x: 0}, {x: '-10vw', duration: 60, stagger: { each: 0.5}}, '-=55');
 
 
-//-----------------Chapitre 6----------------
+/*-----------------Chapitre 6----------------*/
 
 const effectObjectGrotteChap6 = gsap.timeline()
 .fromTo(['#chapitre6 .object, #chapitre6 .morphSvg'], {y: 0, opacity: 0.3}, {y: '10vh', opacity: 1, repeat: -1, yoyo: true, duration: 2, stagger: { each: 0.2}}, '-=60')
@@ -383,7 +383,7 @@ let timeline6 = gsap.timeline({
         speed: 1,
     },
     ease: "none"
-})
+});
 /*.to(".trefle", {
     duration: 10,
     stagger: {
@@ -396,7 +396,7 @@ let timeline6 = gsap.timeline({
 }, '-=25');
 */
 
-//--------------Chapitre 7----------------
+/*--------------Chapitre 7----------------*/
 
 const tl3 = gsap.timeline().fromTo('#chapitre7 .cercleBlanc', {scale: 0.6, opacity: 0.6}, { scale: 1,  opacity: 1, repeat: -1, duration: 10,  yoyo: true, ease: 'power1'});
 
@@ -423,7 +423,7 @@ let timeline7 = gsap.timeline({
         newClass: "fontNormal",
         ease: "power1.inOut"
     },
-})
+});
 
 
 /*
@@ -436,8 +436,6 @@ gsap.from(['.fleche-down'], {
         each: 0.5,
     },
 });
-
-
 
 gsap.to(chap1SpriteStand, { x: '100px', duration: 5});
 */
@@ -484,7 +482,7 @@ tl.to(['.sprite'], {
 });
 */
 
-//------------SrpiteSheet-------------
+/*------------SrpiteSheet-------------*/
 
 const all = document.querySelector('.all');
 const sprite = document.querySelectorAll('.sprite');
