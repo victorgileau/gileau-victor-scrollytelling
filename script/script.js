@@ -3,9 +3,9 @@
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(MotionPathPlugin);
-gsap.registerPlugin(MorphSVGPlugin);
-gsap.config({trialWarn: true});
-gsap.registerPlugin(DrawSVGPlugin);
+//gsap.registerPlugin(MorphSVGPlugin);
+//gsap.config({trialWarn: true});
+//gsap.registerPlugin(DrawSVGPlugin);
 
 const chap1SpriteStand = document.querySelector('#chapitre1 .man');
 const chap2SpriteJ = document.querySelector('#chapitre2 .man');
@@ -226,11 +226,12 @@ let timeline3 = gsap.timeline({
         start: 0.6,
         end: 0,
     }}, '-=80')
+    /*
     .from('.linePath', {
         drawSVG: "100% 100%", 
         duration: 70,
         ease:"power1.inOut",
-    }, '-=80')
+    }, '-=80')*/
 .fromTo('#chapitre3',{opacity: 1}, {opacity: 0, duration: 10, ease: 'ease.out'}, '-=10');
 //.from('#chapitre3 .sprite.man',{ rotation: 360, duration: 2, ease:'none', repeat: -1})
 //.from('#chapitre3 .papier', { rotation: 360, duration: 2, ease:'bounce', yoyo: true, repeat: -1})
@@ -382,7 +383,8 @@ let timeline6 = gsap.timeline({
         speed: 1,
     },
     ease: "none"
-}).to(".trefle", {
+})
+/*.to(".trefle", {
     duration: 10,
     stagger: {
         each: 5,
@@ -392,6 +394,7 @@ let timeline6 = gsap.timeline({
       shapeIndex: 6,
     }
 }, '-=25');
+*/
 
 //--------------Chapitre 7----------------
 
