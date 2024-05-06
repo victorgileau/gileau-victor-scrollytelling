@@ -46,7 +46,7 @@ if (techniqueGsap != null) {
 let timeline1 = gsap.timeline({
     duration: 40,
     scrollTrigger: {
-        markers: true,
+        markers: false,
         scrub: true,
         trigger: '#chapitre1',
         start: 'top 10%',
@@ -58,7 +58,7 @@ let timeline1 = gsap.timeline({
     duration: 30,
     ease: "ease.out",
     scrollTrigger: {
-        markers: true,
+        markers: false,
         scrub: true,
         trigger: '#chapitre1',
         start: 'top 0%',
@@ -93,7 +93,7 @@ const tl2 = gsap.timeline().fromTo('#chapitre2 .cercleBlanc', {scale: 1}, { scal
 let timeline2 = gsap.timeline({
     duration: 60,
     scrollTrigger: {
-        markers: true,
+        markers: false,
         scrub: true,
         trigger: '#chapitre2',
         start: 'top 10%',
@@ -105,7 +105,7 @@ let timeline2 = gsap.timeline({
     ease: "none",
     duration: 40,
     scrollTrigger: {
-        markers: true,
+        markers: false,
         scrub: true,
         trigger: '#chapitre2',
         start: 'top 0%',
@@ -157,7 +157,7 @@ anime.pause()
 let timeline3 = gsap.timeline({
     duration: 8,
     scrollTrigger: {
-        markers: true,
+        markers: false,
         scrub: true,
         trigger: '#chapitre3',
         start: 'top 100%',
@@ -241,7 +241,7 @@ let timeline3 = gsap.timeline({
 let timeline4 = gsap.timeline({
     duration: 60,
     scrollTrigger: {
-        markers: true,
+        markers: false,
         scrub: true,
         trigger: '#chapitre4',
         start: 'top 50%',
@@ -255,7 +255,7 @@ let timeline4 = gsap.timeline({
     backgroundPosition: "-10vw 0",
     ease: "none",
     scrollTrigger: {
-        markers: true,
+        markers: false,
         scrub: 1,
         trigger: '#chapitre4',
         start: 'top 0%',
@@ -295,7 +295,7 @@ effectObjectGrotteChap5.pause();
 let timeline5 = gsap.timeline({
     duration: 60,
     scrollTrigger: {
-        markers: true,
+        markers: false,
         scrub: true,
         trigger: '#chapitre5',
         start: 'top 50%',
@@ -313,7 +313,7 @@ let timeline5 = gsap.timeline({
     backgroundPosition: "-5vw 0",
     ease: "none",
     scrollTrigger: {
-        markers: true,
+        markers: false,
         scrub: 1,
         trigger: '#chapitre5',
         start: 'top 0%',
@@ -355,7 +355,7 @@ effectObjectGrotteChap6.pause();
 let timeline6 = gsap.timeline({
     duration: 60,
     scrollTrigger: {
-        markers: true,
+        markers: false,
         scrub: 1,
         trigger: '#chapitre6',
         start: 'top 50%',
@@ -368,7 +368,7 @@ let timeline6 = gsap.timeline({
     }
 }).from('#chapitre6', {
     scrollTrigger: {
-        markers: true,
+        markers: false,
         scrub: 1,
         trigger: '#chapitre6',
         start: 'top 0%',
@@ -401,10 +401,12 @@ const tl3 = gsap.timeline().fromTo('#chapitre7 .cercleBlanc', {scale: 0.6, opaci
 
 let timeline7 = gsap.timeline({
     scrollTrigger: {
+        /*
         markers: {
             startColor: 'white',
             endColor: 'purple',
         },
+        */
         trigger: '#chapitre7',
         start: '25% 78%',
         end: '75% 75%',
@@ -445,7 +447,7 @@ gsap.utils.toArray('section').forEach((chap) => {
             trigger: chap,
             start: 'top 100%',
             end: '50% 0',
-            markers: true,
+            markers: false,
             toggleActions: 'play pause reverse pause',
         }
     }).to(chap, {x: 100, duration: 1});
@@ -456,7 +458,7 @@ let tl = gsap.timeline({
         trigger: '.all',
         start: 'top center',
         end: '+=2000px',
-        markers: true,
+        markers: false,
         scrub: true,
         pin: true,
         toggleActions: 'restart pause reverse pause',
