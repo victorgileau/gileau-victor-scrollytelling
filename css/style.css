@@ -1012,11 +1012,11 @@ Chapitre 6
 }
 
 #chapitre6 .morphSvg .lune {
-    opacity: 1;
+    opacity: 0;
 }
 
 #chapitre6 .morphSvg .trefle {
-    opacity: 0;
+    opacity: 1;
 }
 
 #chapitre6 .morphSvg.un {
