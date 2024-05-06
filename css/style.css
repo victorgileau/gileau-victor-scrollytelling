@@ -99,7 +99,7 @@ Header
 
 .header p em {
     font-family: 'Grunge';
-    color: var(--noir);
+    color: var(--blanc);
     text-shadow: 0 0 10px var(--blanc);
 }
 
