@@ -154,12 +154,12 @@ Sections
 */
 
 section div {
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
 }
 
 section {
     overflow: hidden;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     width: 100vw;
     height: 100vh;
     background-size: cover;
@@ -1104,7 +1104,7 @@ ul.technique-gsap{
     z-index: 1000;
     top: 0;
     left: 0;
-    
+
     opacity: 0;
 }
 
