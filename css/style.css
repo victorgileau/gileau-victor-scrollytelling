@@ -1109,7 +1109,7 @@ ul.technique-gsap{
     top: 0;
     left: 0;
 
-    opacity: 0;
+    opacity: 1;
 }
 
 ul.technique-gsap li{
