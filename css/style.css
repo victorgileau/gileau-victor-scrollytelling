@@ -144,8 +144,12 @@ Header
     .header .fleche-down {
         width: 25vw;
     }
+}
+
+@media screen and (max-width: 1200px) {
     .header p, .header p.description {
-        font-size: 2.8vmin;
+        font-size: 5vmin;
+        line-height: 5vmin;
     }
 }
 
@@ -191,7 +195,7 @@ section {
     letter-spacing: 0.1em;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     .textBox .text {
         font-size: 6vmin;
         line-height: 6vmin;
