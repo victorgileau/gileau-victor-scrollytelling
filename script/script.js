@@ -126,7 +126,10 @@ let timeline2 = gsap.timeline({
     }, '-=60.5'
 ).to('#chapitre2 .text', {
     duration: 30,
-    text: "Je vois un carpeau de lumière qui m\'emporte plus loin dans ce rêve des plus intrigant.",
+    text: {
+        value: "Je vois un carpeau de lumière qui m\'emporte plus loin dans ce rêve des plus intrigant.",
+        speed: 1,
+    },
     ease: "none"
 }, '-=35').fromTo('#chapitre2 .sol-1', {x: 0}, {x: '-20vw', duration: 60}, '-=68')
 .fromTo('#chapitre2 .roche', {x: 0}, {x: '-10vw', duration: 60}, '-=68')
